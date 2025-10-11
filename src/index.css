@@ -26,10 +26,7 @@ body {
   overflow-x: hidden;
 }
 
-/* Custom font utilities */
-.font-anton {
-  font-family: "Anton", sans-serif;
-}
+
 
 /* Smooth scrolling */
 html {
