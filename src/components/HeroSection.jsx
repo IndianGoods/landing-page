@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import { BackgroundRippleEffect } from "./ui/background-ripple-effect";
-import Navbar from "./NavBar";
+import Navbar from "./Navbar";
 
 export default function HeroSection() {
   return (
