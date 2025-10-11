@@ -1,18 +1,24 @@
-import React from "react";
 import HeroSection from "../components/HeroSection";
 import Testimonials from "../components/Testimonials";
+// import Navbar from "../components/Navbar";
+
+import Cards from "../components/Cards";
+import FeaturesSection from "../components/FeatureSection";
+import Footer from "../components/Footer";
+import Stats from "../components/Stats";
+import Usp from "../components/Usp";
 //import Hero from "../components/hero";
 
 const Home = () => {
   return (
-    <div className="w-full min-h-screen bg-[#f5f5fa] text-gray-900 font-inter">
-      <div id="home">
-        {/* <Hero /> */}
-        
-        <HeroSection />
-      </div>
-
+    <div className="flex flex-col items-center justify-center">
+      <HeroSection />
+      <FeaturesSection />
+      <Cards />
+      <Usp />
       <Testimonials />
+      <Stats />
+      {/* <Footer /> */}
     </div>
   );
 };

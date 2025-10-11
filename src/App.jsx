@@ -1,28 +1,16 @@
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import Home from "./pages/Home";
 
-import { BrowserRouter as Router } from "react-router-dom";
-import HeroSection from "./components/HeroSection";
-import Testimonials from "./components/Testimonials";
-import Navbar from "./components/NavBar"
-
-import Cards from "./Cards";
-import FeaturesSection from "./FeatureSection";
-import Footer from "./Footer";
-import Stats from "./Stats";
-import Usp from "./Usp";
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+  },
+]);
 
 function App() {
-  return (
-    <div className="flex flex-col items-center justify-center">
-    <HeroSection />
-      <FeaturesSection />
-      <Cards />
-      <Usp />
-    <Testimonials
-      <Stats />
-      {/* <Footer /> */}
-    </div>
-
-
+  return <RouterProvider router={router} />;
+}
 // function App() {
 //   return (
 //     <Router>

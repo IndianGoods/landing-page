@@ -5,14 +5,20 @@ import Navbar from "./NavBar";
 
 export default function HeroSection() {
   return (
-    <section className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24">
+    <section
+      className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24"
+      style={{
+        background:
+          "linear-gradient(135deg, #111827 0%, #0f172a 50%, #000000 100%)",
+      }}
+    >
       {/* Background Ripple Effect */}
       <BackgroundRippleEffect rows={8} cols={25} cellSize={55} />
 
       <Navbar isHomePage={true} />
 
       {/* Hero Content */}
-      <div className="relative z-10 grid w-full max-w-[95vw] grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 xl:gap-16 px-6 md:px-10 lg:px-14 xl:px-20 items-start">
+      <div className="relative z-10 grid w-full max-w-[95vw] grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 xl:gap-16 px-6 md:px-10 lg:px-14 xl:px-20 items-start pointer-events-none">
         {/* Left Side - Content */}
         <div className="flex flex-col justify-center space-y-6 min-h-[550px] lg:min-h-[650px] text-center lg:text-left">
           {/* Main Heading and Subheading */}
@@ -24,7 +30,8 @@ export default function HeroSection() {
               CONNECT WITH
               <br />
               <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
-                MILLIONS OF <br />WHOLESALERS
+                MILLIONS OF <br />
+                WHOLESALERS
               </span>
             </h1>
 
@@ -92,7 +99,9 @@ export default function HeroSection() {
                 Today's Orders
               </p>
               <div className="flex items-baseline gap-2 mb-2">
-                <span className="text-3xl xl:text-4xl font-bold text-white">₹2.4L</span>
+                <span className="text-3xl xl:text-4xl font-bold text-white">
+                  ₹2.4L
+                </span>
               </div>
               <div className="flex items-center gap-1 text-xs xl:text-sm">
                 <div className="flex items-center gap-1 text-emerald-400 font-semibold">
@@ -116,7 +125,9 @@ export default function HeroSection() {
               <p className="text-blue-300 text-xs xl:text-sm font-semibold uppercase tracking-wide mb-2">
                 New Suppliers
               </p>
-              <div className="text-4xl xl:text-5xl font-bold text-white mb-2">47</div>
+              <div className="text-4xl xl:text-5xl font-bold text-white mb-2">
+                47
+              </div>
               <div className="flex items-center gap-1 text-xs xl:text-sm">
                 <div className="flex items-center gap-1 text-emerald-400 font-semibold">
                   <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
@@ -162,13 +173,17 @@ export default function HeroSection() {
                     <p className="text-white font-semibold text-sm xl:text-base">
                       Active Users
                     </p>
-                    <p className="text-blue-300 text-xs xl:text-sm">Live Dashboard</p>
+                    <p className="text-blue-300 text-xs xl:text-sm">
+                      Live Dashboard
+                    </p>
                   </div>
                 </div>
 
                 <div className="flex items-center gap-2 px-3 py-2 rounded-full bg-emerald-500/20 border border-emerald-500/30">
                   <div className="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></div>
-                  <span className="text-emerald-400 text-sm font-semibold">Live</span>
+                  <span className="text-emerald-400 text-sm font-semibold">
+                    Live
+                  </span>
                 </div>
               </div>
 
