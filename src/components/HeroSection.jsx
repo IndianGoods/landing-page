@@ -8,8 +8,7 @@ export default function HeroSection() {
     <section
       className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24"
       style={{
-        background:
-          "linear-gradient(135deg, #111827 0%, #0f172a 50%, #000000 100%)",
+        background: "var(--bg-gradient-dark)",
       }}
     >
       {/* Background Ripple Effect */}
@@ -29,13 +28,13 @@ export default function HeroSection() {
             >
               CONNECT WITH
               <br />
-              <span className="bg-gradient-to-r from-blue-400 to-cyan-400 bg-clip-text text-transparent">
+              <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
                 MILLIONS OF <br />
                 WHOLESALERS
               </span>
             </h1>
 
-            <p className="text-base md:text-lg lg:text-[1.125rem] text-gray-300 max-w-lg leading-relaxed mx-auto lg:mx-0">
+            <p className="text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-lg leading-relaxed mx-auto lg:mx-0">
               Scale your manufacturing business by connecting with verified
               wholesalers across India. Quality assured, competitive prices, and
               reliable delivery.

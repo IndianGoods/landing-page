@@ -3,6 +3,11 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import MarketPlace from "./pages/MarketPlace";
 import Contact from "./pages/Contact";
+import BlogHome from "./pages/BlogHome";
+import BlogPost from "./pages/BlogPost";
+import AdminLogin from "./pages/AdminLogin";
+import AdminDashboard from "./pages/AdminDashboard";
+import BlogEditor from "./pages/BlogEditor";
 
 const router = createBrowserRouter([
   {
@@ -21,6 +26,28 @@ const router = createBrowserRouter([
   {
     path: "/contact",
     element: <Contact />,
+    path: "/blog",
+    element: <BlogHome />,
+  },
+  {
+    path: "/blog/:slug",
+    element: <BlogPost />,
+  },
+  {
+    path: "/admin/login",
+    element: <AdminLogin />,
+  },
+  {
+    path: "/admin",
+    element: <AdminDashboard />,
+  },
+  {
+    path: "/admin/create",
+    element: <BlogEditor />,
+  },
+  {
+    path: "/admin/edit/:id",
+    element: <BlogEditor />,
   },
 ]);
 
