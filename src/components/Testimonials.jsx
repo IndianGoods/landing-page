@@ -72,8 +72,6 @@ const ContentCard = ({ testimonial }) => (
 );
 
 
-
-
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isAutoScrolling, setIsAutoScrolling] = useState(true);
