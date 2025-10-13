@@ -5,36 +5,91 @@ import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#f0f0f5] text-gray-700">
+    <footer className="bg-[#f0f0f5] text-gray-700 w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 sm:pt-16">
         {/* Grid of links */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           {/* Column 1 - Company */}
           <div className="text-center sm:text-left">
-            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0743ba]">Company</h3>
+            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0743ba]">
+              Company
+            </h3>
             <ul className="space-y-2 sm:space-y-3 text-sm">
-              <li><Link to="/about" className="hover:text-[#fa7414] transition-colors">About Us</Link></li>
-              <li><Link to="/blog" className="hover:text-[#fa7414] transition-colors">Blog & Research</Link></li>
-              <li><Link to="/contact" className="hover:text-[#fa7414] transition-colors">Contact Us</Link></li>
-              <li><Link to="/marketplace" className="hover:text-[#fa7414] transition-colors">Market Place</Link></li>
+              <li>
+                <Link
+                  to="/about"
+                  className="hover:text-[#fa7414] transition-colors"
+                >
+                  About Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/blog"
+                  className="hover:text-[#fa7414] transition-colors"
+                >
+                  Blog & Research
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="hover:text-[#fa7414] transition-colors"
+                >
+                  Contact Us
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/marketplace"
+                  className="hover:text-[#fa7414] transition-colors"
+                >
+                  Market Place
+                </Link>
+              </li>
             </ul>
           </div>
 
           {/* Column 2 - Marketplace */}
           <div className="text-center sm:text-left">
-            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0743ba]">Marketplace</h3>
+            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0743ba]">
+              Marketplace
+            </h3>
             <ul className="space-y-2 sm:space-y-3 text-sm">
-              <li><Link to="/marketplace" className="hover:text-[#fa7414] transition-colors">B2B Marketplace</Link></li>
+              <li>
+                <Link
+                  to="/marketplace"
+                  className="hover:text-[#fa7414] transition-colors"
+                >
+                  B2B Marketplace
+                </Link>
+              </li>
               {/* <li><Link to="/marketplace#how-it-works" className="hover:text-[#fa7414] transition-colors">How It Works</Link></li> */}
-              <li><Link to="/marketplace#benefits" className="hover:text-[#fa7414] transition-colors">Benefits</Link></li>
-              <li><Link to="/marketplace#process" className="hover:text-[#fa7414] transition-colors">Our Process</Link></li>
+              <li>
+                <Link
+                  to="/marketplace#benefits"
+                  className="hover:text-[#fa7414] transition-colors"
+                >
+                  Benefits
+                </Link>
+              </li>
+              <li>
+                <Link
+                  to="/marketplace#process"
+                  className="hover:text-[#fa7414] transition-colors"
+                >
+                  Our Process
+                </Link>
+              </li>
               {/* <li><a href="#" className="hover:text-[#fa7414] transition-colors">Success Stories</a></li> */}
             </ul>
           </div>
 
           {/* Column 3 - Stay Connected */}
           <div className="text-center sm:text-left">
-            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0743ba]">Stay Connected</h3>
+            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0743ba]">
+              Stay Connected
+            </h3>
             <p className="text-sm mb-4 text-gray-600">
               Join our community for updates and business insights
             </p>
@@ -82,20 +137,28 @@ const Footer = () => {
               >
                 <path d="M12.04 2c-5.52 0-10 4.48-10 10 0 1.77.46 3.41 1.27 4.83L2 22l5.3-1.38A9.96 9.96 0 0012.04 22c5.52 0 10-4.48 10-10s-4.48-10-10-10Zm5.14 14.24c-.22.62-1.28 1.18-1.77 1.26-.46.09-1.06.13-1.71-.11-.39-.13-.89-.29-1.53-.57-2.7-1.17-4.46-3.9-4.6-4.08-.13-.18-1.1-1.47-1.1-2.8 0-1.34.69-1.99.94-2.26.22-.27.48-.34.64-.34h.46c.14 0 .34-.04.53.4.18.44.61 1.53.66 1.64.04.13.09.27.02.44-.07.18-.11.27-.23.42-.11.13-.24.29-.34.39-.11.09-.22.2-.09.4.13.18.57.93 1.21 1.5.83.74 1.53.97 1.77 1.06.22.09.36.07.5-.04.14-.11.57-.67.72-.9.13-.22.3-.18.5-.11.18.07 1.14.53 1.34.62.18.09.3.13.34.2.05.05.05.62-.16 1.23Z" />
               </svg>
-              <span className="text-xs sm:text-sm">Join WhatsApp Community</span>
+              <span className="text-xs sm:text-sm">
+                Join WhatsApp Community
+              </span>
             </a>
           </div>
 
           {/* Column 4 - Contact Information */}
           <div className="text-center sm:text-left">
-            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0743ba]">Contact Information</h3>
+            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0743ba]">
+              Contact Information
+            </h3>
             <div className="space-y-3 sm:space-y-4">
               <div className="flex items-start gap-3 justify-center sm:justify-start">
                 <span className="text-[#fa7414] text-base sm:text-lg">📧</span>
                 <div className="text-center sm:text-left">
                   <h4 className="font-medium text-gray-800 text-sm">Email</h4>
-                  <p className="text-xs text-gray-600">support@indiangoods.com</p>
-                  <p className="text-xs text-gray-500">business@indiangoods.com</p>
+                  <p className="text-xs text-gray-600">
+                    support@indiangoods.com
+                  </p>
+                  <p className="text-xs text-gray-500">
+                    business@indiangoods.com
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3 justify-center sm:justify-start">
@@ -103,7 +166,9 @@ const Footer = () => {
                 <div className="text-center sm:text-left">
                   <h4 className="font-medium text-gray-800 text-sm">Phone</h4>
                   <p className="text-xs text-gray-600">+91 1800-XXX-XXXX</p>
-                  <p className="text-xs text-gray-500">24/7 Support Available</p>
+                  <p className="text-xs text-gray-500">
+                    24/7 Support Available
+                  </p>
                 </div>
               </div>
               <div className="flex items-start gap-3 justify-center sm:justify-start">
@@ -122,10 +187,16 @@ const Footer = () => {
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-300">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-4 lg:gap-6 text-xs text-gray-500">
-              <p>© {new Date().getFullYear()} IndianGoods. All rights reserved.</p>
+              <p>
+                © {new Date().getFullYear()} IndianGoods. All rights reserved.
+              </p>
               <span className="hidden sm:block">|</span>
-              <a href="#" className="hover:text-[#fa7414] transition-colors">Terms of Service</a>
-              <a href="#" className="hover:text-[#fa7414] transition-colors">Privacy Policy</a>
+              <a href="#" className="hover:text-[#fa7414] transition-colors">
+                Terms of Service
+              </a>
+              <a href="#" className="hover:text-[#fa7414] transition-colors">
+                Privacy Policy
+              </a>
             </div>
             <div className="text-xs text-gray-500">
               <p>🇮🇳 Proudly Made in India</p>
@@ -145,9 +216,7 @@ const Footer = () => {
         </div>
       </div>
 
-   {/* Branding full-width bottom */}
-
-
+      {/* Branding full-width bottom */}
     </footer>
   );
 };
