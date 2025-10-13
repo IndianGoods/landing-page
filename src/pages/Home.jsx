@@ -18,7 +18,7 @@ const Home = () => {
       <Usp />
       <Testimonials />
       <Stats />
-      {/* <Footer /> */}
+      <Footer />
     </div>
   );
 };
