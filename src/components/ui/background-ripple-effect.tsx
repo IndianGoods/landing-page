@@ -7,7 +7,10 @@ export const BackgroundRippleEffect = ({
 }: {
   cellSize?: number;
 }) => {
-  const [clickedCell, setClickedCell] = useState<{ row: number; col: number } | null>(null);
+  const [clickedCell, setClickedCell] = useState<{
+    row: number;
+    col: number;
+  } | null>(null);
   const [rippleKey, setRippleKey] = useState(0);
   const [gridSize, setGridSize] = useState({ rows: 0, cols: 0 });
   const ref = useRef<HTMLDivElement | null>(null);
@@ -30,10 +33,10 @@ export const BackgroundRippleEffect = ({
     <div
       ref={ref}
       className={cn(
-        "absolute inset-0 h-screen w-screen overflow-hidden",
-        // 💡 Much lighter neutral tones
-        "[--cell-border-color:rgba(0,0,0,0.06)] [--cell-fill-color:rgba(0,0,0,0.015)] [--cell-shadow-color:rgba(0,0,0,0.08)]",
-        "dark:[--cell-border-color:rgba(255,255,255,0.08)] dark:[--cell-fill-color:rgba(255,255,255,0.02)] dark:[--cell-shadow-color:rgba(255,255,255,0.05)]"
+        "absolute inset-0 h-screen w-screen overflow-hidden opacity-70",
+        // 💡 Much lighter neutral tones with reduced visibility
+        "[--cell-border-color:rgba(0,0,0,0.03)] [--cell-fill-color:rgba(0,0,0,0.008)] [--cell-shadow-color:rgba(0,0,0,0.04)]",
+        "dark:[--cell-border-color:rgba(255,255,255,0.04)] dark:[--cell-fill-color:rgba(255,255,255,0.01)] dark:[--cell-shadow-color:rgba(255,255,255,0.025)]"
       )}
     >
       <DivGrid
@@ -122,7 +125,7 @@ const DivGrid = ({
             className={cn(
               "border-[0.5px] opacity-30 transition-opacity duration-150 will-change-transform hover:opacity-70 dark:shadow-[0px_0px_40px_1px_var(--cell-shadow-color)_inset]",
               clickedCell && "animate-cell-ripple [animation-fill-mode:none]",
-              !interactive && "pointer-events-none",
+              !interactive && "pointer-events-none"
             )}
             style={{
               backgroundColor: fillColor,

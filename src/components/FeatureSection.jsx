@@ -2,12 +2,15 @@ import { CreditCard, Command, FileText } from "lucide-react";
 
 export default function FeaturesSection() {
   return (
-    <section className="w-full bg-slate-50 py-16" style={{ background: "var(--bg-gradient-light)" }}>
+    <section
+      className="w-full bg-slate-50 py-16"
+      style={{ background: "var(--bg-gradient-light)" }}
+    >
       <div className="max-w-8xl mx-auto flex flex-col md:flex-row justify-center items-center md:items-center gap-12 md:gap-0 px-6">
         {/* Credit Card */}
-        <div className="flex-1 flex flex-col items-center text-center px-6 md:px-8 relative">
-          <div className="bg-gradient-to-br from-blue-600 to-blue-700 rounded-full p-4 mb-4 w-18 md:w-22 flex items-center justify-center shadow-lg">
-            <CreditCard className="text-white w-6 md:w-8 h-6 md:h-8" />
+        <div className="flex-1 flex flex-col items-center text-center px-6 md:px-8 relative ">
+          <div className="pb-2 ">
+            <CreditCard className="text-black w-6 md:w-10 h-6 md:h-10" />
           </div>
           <h3 className="text-xl md:text-2xl font-semibold text-slate-800 mb-3">
             Credit card
@@ -21,9 +24,11 @@ export default function FeaturesSection() {
 
         {/* Management */}
         <div className="flex-1 flex flex-col items-center text-center px-6 md:px-8 relative">
-          <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-full p-4 mb-4 w-18 md:w-22 flex items-center justify-center shadow-lg">
-            <Command className="text-white w-6 md:w-8 h-6 md:h-8" />
+          {/* <div className="bg-gradient-to-br from-blue-500 to-blue-600 rounded-full p-4 mb-4 w-18 md:w-22 flex items-center justify-center shadow-lg"> */}
+          <div className="pb-2">
+            <Command className="text-black w-6 md:w-10 h-6 md:h-10" />
           </div>
+          {/* </div> */}
           <h3 className="text-xl md:text-2xl font-semibold text-slate-800 mb-3">
             Management
           </h3>
@@ -36,9 +41,11 @@ export default function FeaturesSection() {
 
         {/* Application */}
         <div className="flex-1 flex flex-col items-center text-center px-6 md:px-8">
-          <div className="bg-gradient-to-br from-blue-700 to-blue-800 rounded-full p-4 mb-4 w-18 md:w-22 flex items-center justify-center shadow-lg">
-            <FileText className="text-white w-6 md:w-8 h-6 md:h-8" />
+          {/* <div className="bg-gradient-to-br from-blue-700 to-blue-800 rounded-full p-4 mb-4 w-18 md:w-22 flex items-center justify-center shadow-lg"> */}
+          <div className="pb-2">
+            <FileText className="text-black w-6 md:w-10 h-6 md:h-10" />
           </div>
+          {/* </div> */}
           <h3 className="text-xl md:text-2xl font-semibold text-slate-800 mb-3">
             Application
           </h3>

@@ -2,8 +2,20 @@
 import React from "react";
 import { BackgroundRippleEffect } from "./ui/background-ripple-effect";
 import Navbar from "./Navbar";
+import Lottie from "lottie-react";
+import { useState, useEffect } from "react";
 
 export default function HeroSection() {
+  const [animationData, setAnimationData] = useState(null);
+
+  // ✅ Load Lottie animation from public folder
+  useEffect(() => {
+    fetch("/about.json")
+      .then((res) => res.json())
+      .then((data) => setAnimationData(data))
+      .catch((err) => console.error("Error loading Lottie animation:", err));
+  }, []);
+
   return (
     <section
       className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24"
@@ -17,13 +29,13 @@ export default function HeroSection() {
       <Navbar isHomePage={true} />
 
       {/* Hero Content */}
-      <div className="relative z-10 grid w-full max-w-[95vw] grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 xl:gap-16 px-6 md:px-10 lg:px-14 xl:px-20 items-start pointer-events-none">
+      <div className="relative z-10 grid w-full max-w-[95vw] grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 xl:gap-16 px-6 md:px-10 lg:px-14 xl:px-20 items-start">
         {/* Left Side - Content */}
         <div className="flex flex-col justify-center space-y-6 min-h-[550px] lg:min-h-[650px] text-center lg:text-left">
           {/* Main Heading and Subheading */}
           <div className="space-y-4">
             <h1
-              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight"
+              className="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight pointer-events-none"
               style={{ fontFamily: "Oswald, sans-serif" }}
             >
               CONNECT WITH
@@ -34,7 +46,7 @@ export default function HeroSection() {
               </span>
             </h1>
 
-            <p className="text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-lg leading-relaxed mx-auto lg:mx-0">
+            <p className="text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-lg leading-relaxed mx-auto lg:mx-0 pointer-events-none">
               Scale your manufacturing business by connecting with verified
               wholesalers across India. Quality assured, competitive prices, and
               reliable delivery.
@@ -43,8 +55,9 @@ export default function HeroSection() {
 
           {/* Buttons */}
           <div className="flex gap-4 flex-wrap justify-center lg:justify-start">
-            <button className="px-7 py-3.5 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-semibold text-base md:text-lg transition-all duration-300 hover:from-blue-500 hover:to-blue-400 hover:scale-105">
-              Getting Started
+            <button className="px-8 py-4 rounded-full bg-gradient-to-r from-blue-600 to-blue-500 text-white font-bold text-lg md:text-xl transition-all duration-300 hover:from-blue-500 hover:to-blue-400 hover:scale-110 hover:shadow-2xl hover:shadow-blue-500/25 transform-gpu relative overflow-hidden group pointer-events-auto">
+              <span className="absolute inset-0 bg-gradient-to-r from-white/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+              <span className="relative z-10">Get Started</span>
             </button>
             {/* <button className="px-7 py-3.5 rounded-full bg-white/10 backdrop-blur-sm border border-blue-400/30 text-white font-semibold text-base md:text-lg transition-all duration-300 hover:bg-white/20 hover:border-blue-400/50">
               Learn More
@@ -53,7 +66,7 @@ export default function HeroSection() {
 
           {/* Trusted By Section */}
           <div className="pt-14 space-y-4">
-            <p className="text-sm uppercase tracking-wider text-blue-400 font-semibold">
+            <p className="text-sm uppercase tracking-wider text-blue-400 font-semibold pointer-events-none">
               TRUSTED BY THE BEST
             </p>
             <div className="flex flex-wrap items-center gap-7 justify-center lg:justify-start">
@@ -64,7 +77,7 @@ export default function HeroSection() {
               ].map((c, i) => (
                 <div
                   key={i}
-                  className="flex items-center gap-3 text-white/50 hover:text-white transition-colors duration-300 cursor-pointer"
+                  className="flex items-center gap-3 text-white/70 hover:text-white transition-colors duration-300 cursor-pointer pointer-events-auto"
                 >
                   <svg width="32" height="32" viewBox="0 0 36 36" fill="none">
                     <rect
@@ -88,12 +101,22 @@ export default function HeroSection() {
           </div>
         </div>
 
+        <div className="flex justify-center items-center h-full">
+          {animationData ? (
+            <Lottie
+              animationData={animationData}
+              loop={true}
+              className="w-[80%]"
+            />
+          ) : (
+            <p className="text-gray-500">Loading animation...</p>
+          )}
+        </div>
+
         {/* Right Side - Stats Cards */}
-        <div className="flex flex-col items-end gap-7 pt-10 min-h-[650px] justify-start w-full">
-          {/* Row 1 - Two Small Cards */}
+        {/* <div className="flex flex-col items-end gap-7 pt-10 min-h-[650px] justify-start w-full">
           <div className="flex gap-5 w-full max-w-full">
-            {/* Today's Orders Card */}
-            <div className="flex h-40 xl:h-44 flex-1 flex-col justify-center px-6 xl:px-7 rounded-2xl bg-blue-900/90 backdrop-blur-md border border-blue-700/50 transition-all duration-300 hover:scale-105 hover:bg-blue-900/95">
+            <div className="flex h-40 xl:h-44 flex-1 flex-col justify-center px-6 xl:px-7 rounded-2xl bg-blue-900/90 backdrop-blur-md border border-blue-700/50 transition-all duration-300 hover:scale-105 hover:bg-blue-900/95 pointer-events-auto">
               <p className="text-blue-300 text-xs xl:text-sm font-semibold uppercase tracking-wide mb-2">
                 Today's Orders
               </p>
@@ -119,8 +142,7 @@ export default function HeroSection() {
               </div>
             </div>
 
-            {/* New Suppliers Card */}
-            <div className="flex h-40 xl:h-44 flex-1 flex-col justify-center px-6 xl:px-7 rounded-2xl bg-blue-900/90 backdrop-blur-md border border-blue-700/50 transition-all duration-300 hover:scale-105 hover:bg-blue-900/95">
+            <div className="flex h-40 xl:h-44 flex-1 flex-col justify-center px-6 xl:px-7 rounded-2xl bg-blue-900/90 backdrop-blur-md border border-blue-700/50 transition-all duration-300 hover:scale-105 hover:bg-blue-900/95 pointer-events-auto">
               <p className="text-blue-300 text-xs xl:text-sm font-semibold uppercase tracking-wide mb-2">
                 New Suppliers
               </p>
@@ -145,8 +167,7 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Row 2 - Large Card */}
-          <div className="flex h-80 xl:h-88 w-full rounded-2xl bg-blue-950/95 backdrop-blur-md border border-blue-800/50 transition-all duration-300 hover:scale-[1.02] relative overflow-hidden p-6 xl:p-8">
+          <div className="flex h-80 xl:h-88 w-full rounded-2xl bg-blue-950/95 backdrop-blur-md border border-blue-800/50 transition-all duration-300 hover:scale-[1.02] relative overflow-hidden p-6 xl:p-8 pointer-events-auto">
             <div className="relative z-10 w-full">
               <div className="flex items-start justify-between mb-6">
                 <div className="flex items-center gap-3">
@@ -207,7 +228,7 @@ export default function HeroSection() {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </section>
   );

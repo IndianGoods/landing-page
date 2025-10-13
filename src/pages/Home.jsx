@@ -11,9 +11,10 @@ import Usp from "../components/Usp";
 
 const Home = () => {
   return (
-    <div className="flex flex-col items-center justify-center">
+    <div className="flex flex-col items-center justify-center w-full">
       <HeroSection />
       <FeaturesSection />
+
       <Cards />
       <Usp />
       <Testimonials />
