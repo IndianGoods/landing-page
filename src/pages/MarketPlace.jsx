@@ -81,9 +81,10 @@ const Marketplace = () => {
         subheading="Connecting 10,000+ Manufacturers and 50,000+ Wholesalers directly to build stronger, faster, and more reliable supply chains."
       />
 
+      {/* Process Section - Section 1: Light Gray */}
       <section
         id="process"
-        className="bg-[#f8fafc] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+        className="bg-[#fdfdfe] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       >
         <div className="max-w-6xl mx-auto relative z-10">
           {/* Header */}
@@ -301,20 +302,20 @@ const Marketplace = () => {
 
     
 
-      {/* Benefits Section */}
-      <section id="benefits" className="bg-[#f8fafc] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
+      {/* Benefits Section - Section 2: Dark Blue */}
+      <section id="benefits" className="bg-[#0f172a] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12 sm:mb-16">
             <div className="inline-block mb-4">
-              <span className="text-blue-600 font-semibold text-xs sm:text-sm tracking-wider uppercase">
+              <span className="text-cyan-400 font-semibold text-xs sm:text-sm tracking-wider uppercase">
                 Benefits
               </span>
             </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
               Why Choose Our Platform?
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 mx-auto rounded-full mb-6"></div>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+            <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto px-4">
               Experience the future of B2B trading with cutting-edge technology
               and unmatched reliability
             </p>
@@ -355,16 +356,16 @@ const Marketplace = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-[#f8fafc] rounded-xl p-8 hover:shadow-md transition-shadow border border-gray-200"
+                className="bg-slate-800/50 backdrop-blur-sm border border-slate-600 rounded-xl p-8 hover:shadow-2xl transition-all hover:bg-slate-800/70"
               >
-                <div className="inline-flex p-4 rounded-xl bg-blue-600 text-white mb-6">
+                <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 text-slate-900 mb-6 shadow-lg">
                   {item.icon}
                 </div>
 
-                <h3 className="text-xl font-bold text-gray-900 mb-3">
+                <h3 className="text-xl font-bold text-white mb-3">
                   {item.title}
                 </h3>
-                <p className="text-gray-600 leading-relaxed">{item.text}</p>
+                <p className="text-slate-300 leading-relaxed">{item.text}</p>
               </div>
             ))}
           </div>

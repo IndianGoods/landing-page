@@ -55,15 +55,15 @@ const Contact = () => {
 
   return (
     <div className="min-h-screen bg-white">
-      <Navbar  />
+      <Navbar isHomePage={true} />
       
-      {/* <HeroSection
+      <HeroSection
         heading="Get in Touch"
         subheading="Ready to discuss your project? We'd love to hear from you and help bring your ideas to life."
-      /> */}
+      />
 
-      {/* Contact Section */}
-      <section className="py-20 px-4 bg-white">{}
+      {/* Contact Section - Section 1: Light Gray */}
+      <section className="py-20 px-4 bg-[#fdfdfe]">{}
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-16 items-start">
             {/* Left: Contact Form */}
