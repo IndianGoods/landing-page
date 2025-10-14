@@ -76,14 +76,14 @@ const BlogHome = () => {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      <Navbar />
+      <Navbar isHomePage={true} />
 
       <HeroSection
-              heading="Inside IndianGoods: Stories"
-              subheading="Discover insights about Indian manufacturing, B2B trade
+        heading="Inside IndianGoods: Stories"
+        subheading="Discover insights about Indian manufacturing, B2B trade
               strategies, export opportunities, and real success stories from
               exporters and global buyers."
-            />
+      />
       {/* Hero Section
       <section
         className=" pt-32 pb-16 px-4 relative overflow-hidden"
@@ -133,7 +133,7 @@ const BlogHome = () => {
                       className="w-full h-48 object-cover transition-transform duration-300 group-hover:scale-105"
                     />
                     <div className="absolute top-3 right-3">
-                      <div className="bg-[#0743ba] text-white rounded-full px-2 py-1 text-xs font-medium">
+                      <div className="bg-[#0f172a] text-white rounded-full px-2 py-1 text-xs font-medium">
                         {calculateReadingTime(blog.content)} min
                       </div>
                     </div>
@@ -146,7 +146,7 @@ const BlogHome = () => {
                       <span>By {blog.author}</span>
                     </div>
 
-                    <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#fa7414] transition-colors">
+                    <h3 className="text-lg font-bold text-gray-900 mb-2 line-clamp-2 group-hover:text-[#0f172a] transition-colors">
                       {blog.title}
                     </h3>
 
@@ -161,7 +161,7 @@ const BlogHome = () => {
                       {(blog.tags || []).slice(0, 1).map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-2 py-1 bg-orange-100 text-[#fa7414] text-xs rounded-full font-medium"
+                          className="px-2 py-1 bg-[#0f172a]/10 text-[#0f172a] text-xs rounded-full font-medium"
                         >
                           {tag}
                         </span>
@@ -170,7 +170,7 @@ const BlogHome = () => {
 
                     <Link
                       to={`/blog/${blog.slug}`}
-                      className="inline-flex items-center text-[#fa7414] hover:text-[#ff8c3a] font-medium text-sm group-hover:translate-x-1 transition-all duration-300"
+                      className="inline-flex items-center text-[#0f172a] hover:text-[#0f172a]/80 font-medium text-sm group-hover:translate-x-1 transition-all duration-300"
                     >
                       <span>Read more</span>
                       <svg
@@ -237,7 +237,7 @@ const BlogHome = () => {
                         {(blog.tags || []).slice(0, 2).map((tag, tagIndex) => (
                           <span
                             key={tagIndex}
-                            className="px-2 sm:px-3 py-1 bg-orange-100 text-[#fa7414] text-xs rounded-full font-medium"
+                            className="px-2 sm:px-3 py-1 bg-[#0f172a]/10 text-[#0f172a] text-xs rounded-full font-medium"
                           >
                             {tag}
                           </span>
@@ -250,7 +250,7 @@ const BlogHome = () => {
                           <span>By {blog.author}</span>
                         </div>
                       </div>
-                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-[#fa7414] transition-colors duration-300">
+                      <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-[#0f172a] transition-colors duration-300">
                         {blog.title}
                       </h3>
                       <p className="text-sm sm:text-base text-gray-600 mb-4 sm:mb-6 line-clamp-3 leading-relaxed">
@@ -261,7 +261,7 @@ const BlogHome = () => {
                       </p>
                       <Link
                         to={`/blog/${blog.slug}`}
-                        className="inline-flex items-center space-x-2 text-[#fa7414] hover:text-[#ff8c3a] font-semibold text-xs sm:text-sm group-hover:translate-x-1 transition-all duration-300"
+                        className="inline-flex items-center space-x-2 text-[#0f172a] hover:text-[#0f172a]/80 font-semibold text-xs sm:text-sm group-hover:translate-x-1 transition-all duration-300"
                       >
                         <span>Read full article</span>
                         <svg
@@ -288,7 +288,7 @@ const BlogHome = () => {
                 <div className="text-center">
                   <button
                     onClick={loadMoreBlogs}
-                    className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-[#fa7414] to-[#ff8c3a] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1"
+                    className="inline-flex items-center space-x-2 sm:space-x-3 bg-[#0f172a] hover:bg-[#0f172a]/90 text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:shadow-2xl hover:shadow-[#0f172a]/25 transition-all duration-300 transform hover:-translate-y-1"
                   >
                     <span>Load more posts</span>
                     <svg

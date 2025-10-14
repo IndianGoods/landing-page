@@ -54,7 +54,7 @@ const TestimonialCard = ({ testimonial, isActive }) => (
       isActive ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
     }`}
   >
-    <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-blue-900/10 border border-slate-100 max-w-4xl mx-auto relative overflow-hidden">
+    <div className="bg-[#0f172a] text-white rounded-3xl p-8 md:p-10 shadow-xl shadow-blue-900/10 border border-slate-100 max-w-4xl mx-auto relative overflow-hidden">
       {/* Background Quote Icon */}
       <div className="absolute top-6 right-8">
         <QuoteIcon />
@@ -65,11 +65,11 @@ const TestimonialCard = ({ testimonial, isActive }) => (
         {[...Array(5)].map((_, i) => (
           <StarIcon key={i} />
         ))}
-        <span className="text-slate-600 text-sm ml-2 font-medium">5.0</span>
+        <span className="text-slate-400 text-sm ml-2 font-medium">5.0</span>
       </div>
 
       {/* Testimonial Quote */}
-      <blockquote className="text-xl md:text-2xl text-slate-800 leading-relaxed mb-8 font-medium">
+      <blockquote className="text-xl md:text-2xl text-slate-200 leading-relaxed mb-8 font-medium">
         "{testimonial.description}"
       </blockquote>
 
@@ -85,10 +85,10 @@ const TestimonialCard = ({ testimonial, isActive }) => (
             />
           </div>
           <div>
-            <h4 className="text-lg font-bold text-slate-900">
+            <h4 className="text-lg font-bold text-slate-300">
               {testimonial.name}
             </h4>
-            <p className="text-slate-600 text-sm">
+            <p className="text-slate-400 text-sm">
               {testimonial.designation} at{" "}
               <span className="font-semibold text-blue-600">
                 {testimonial.company}
@@ -104,7 +104,7 @@ const TestimonialCard = ({ testimonial, isActive }) => (
               <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1">
                 {stat.value}
               </div>
-              <div className="text-xs text-slate-500 font-medium uppercase tracking-wide">
+              <div className="text-xs text-slate-400 font-medium uppercase tracking-wide">
                 {stat.label}
               </div>
             </div>
@@ -202,7 +202,7 @@ const Testimonials = () => {
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white w-full">
+    <section className="py-12 md:py-18 bg-gradient-to-b from-slate-50 to-white w-full">
       <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
         {/* Header */}
         <div className="text-center mb-16">
@@ -245,14 +245,14 @@ const Testimonials = () => {
           {/* Navigation Arrows */}
           <button
             onClick={prevSlide}
-            className="absolute left-4 md:-left-16 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-blue-600 hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
+            className="absolute left-4 md:-left-16 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#0f172a] rounded-full shadow-lg flex items-center justify-center text-slate-300 hover:text-slate-500 hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
           >
             <ChevronLeft className="w-6 h-6" />
           </button>
 
           <button
             onClick={nextSlide}
-            className="absolute right-4 md:-right-16 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-blue-600 hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
+            className="absolute right-4 md:-right-16 top-1/2 -translate-y-1/2 w-12 h-12 bg-[#0f172a] rounded-full shadow-lg flex items-center justify-center text-slate-300 hover:text-slate-500 hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
           >
             <ChevronRight className="w-6 h-6" />
           </button>

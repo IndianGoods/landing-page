@@ -329,12 +329,8 @@ const BlogPost = () => {
         <section className="py-20 px-4 bg-gradient-to-b from-gray-50 to-white">
           <div className="max-w-7xl mx-auto">
             <div className="text-center mb-16">
-              <h2 className="text-4xl md:text-5xl font-black text-[#0743ba] mb-4">
-                More{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#fa7414] to-[#ff8c3a]">
-                  Amazing
-                </span>{" "}
-                Reads
+              <h2 className="text-4xl md:text-5xl font-black text-[#0f172a] mb-4">
+                More <span className="text-blue-600">Amazing</span> Reads
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
                 Discover more insights and stories that might interest you
@@ -370,7 +366,7 @@ const BlogPost = () => {
                       {relatedBlog.tags.slice(0, 2).map((tag, tagIndex) => (
                         <span
                           key={tagIndex}
-                          className="px-2 sm:px-3 py-1 bg-orange-100 text-[#fa7414] text-xs rounded-full font-medium"
+                          className="px-2 sm:px-3 py-1 bg-[#0f172a]/10 text-[#0f172a] text-xs rounded-full font-medium"
                         >
                           {tag}
                         </span>
@@ -385,7 +381,7 @@ const BlogPost = () => {
                       </div>
                     </div>
 
-                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-[#fa7414] transition-colors duration-300">
+                    <h3 className="text-lg sm:text-xl lg:text-2xl font-bold text-gray-900 mb-2 sm:mb-3 line-clamp-2 group-hover:text-[#0f172a] transition-colors duration-300">
                       {relatedBlog.title}
                     </h3>
 
@@ -398,7 +394,7 @@ const BlogPost = () => {
 
                     <Link
                       to={`/blog/${relatedBlog.slug}`}
-                      className="inline-flex items-center space-x-2 text-[#fa7414] hover:text-[#ff8c3a] font-semibold text-xs sm:text-sm group-hover:translate-x-1 transition-all duration-300"
+                      className="inline-flex items-center space-x-2 text-[#0f172a] hover:text-[#0f172a]/80 font-semibold text-xs sm:text-sm group-hover:translate-x-1 transition-all duration-300"
                     >
                       <span>Read full article</span>
                       <svg
@@ -424,7 +420,7 @@ const BlogPost = () => {
             <div className="text-center mt-12 sm:mt-16">
               <Link
                 to="/blog"
-                className="inline-flex items-center space-x-2 sm:space-x-3 bg-gradient-to-r from-[#fa7414] to-[#ff8c3a] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:shadow-2xl hover:shadow-orange-500/25 transition-all duration-300 transform hover:-translate-y-1"
+                className="inline-flex items-center space-x-2 sm:space-x-3 bg-[#0f172a] text-white px-6 sm:px-8 py-3 sm:py-4 rounded-xl sm:rounded-2xl font-bold text-base sm:text-lg hover:shadow-2xl hover:shadow-[#0f172a]/25 transition-all duration-300 transform hover:-translate-y-1"
               >
                 <span>Explore All Articles</span>
                 <svg
@@ -449,7 +445,7 @@ const BlogPost = () => {
       {/* Toast Notification */}
       {showToast && (
         <div className="fixed bottom-4 right-4 z-50 animate-fade-in">
-          <div className="bg-[#fa7414] text-white px-6 py-3 rounded-lg shadow-2xl flex items-center space-x-3 transform transition-all duration-300 ease-in-out">
+          <div className="bg-[#0f172a] text-white px-6 py-3 rounded-lg shadow-2xl flex items-center space-x-3 transform transition-all duration-300 ease-in-out">
             <svg
               className="w-5 h-5 flex-shrink-0"
               fill="none"
