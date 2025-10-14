@@ -34,14 +34,14 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-white">
+    <section className="py-24 px-6 bg-[#0f172a]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-blue-600 uppercase tracking-widest mb-3">
+          <p className="text-sm font-semibold text-cyan-400 uppercase tracking-widest mb-3">
             Leadership Team
           </p>
-          <h2 className="text-4xl md:text-5xl font-bold text-slate-900">
+          <h2 className="text-4xl md:text-5xl font-bold text-white">
             Meet Our Team
           </h2>
         </div>
@@ -51,10 +51,10 @@ export default function TeamSection() {
           {teamMembers.map((member, idx) => (
             <div
               key={idx}
-              className="group bg-white rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl"
+              className="group bg-slate-800/50 backdrop-blur-sm border border-slate-600 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:bg-slate-800/70"
             >
               {/* Image */}
-              <div className="relative w-full h-80 overflow-hidden bg-slate-100">
+              <div className="relative w-full h-80 overflow-hidden bg-slate-700">
                 <img
                   src={member.img}
                   alt={member.name}
@@ -67,7 +67,7 @@ export default function TeamSection() {
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-11 h-11 bg-white rounded-full hover:bg-blue-50 transition-colors"
+                    className="flex items-center justify-center w-11 h-11 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors"
                     aria-label="LinkedIn"
                   >
                     <Linkedin className="w-5 h-5 text-slate-900" />
@@ -75,7 +75,7 @@ export default function TeamSection() {
                   
                   <a
                     href={member.email}
-                    className="flex items-center justify-center w-11 h-11 bg-white rounded-full hover:bg-blue-50 transition-colors"
+                    className="flex items-center justify-center w-11 h-11 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors"
                     aria-label="Email"
                   >
                     <Mail className="w-5 h-5 text-slate-900" />
@@ -85,10 +85,10 @@ export default function TeamSection() {
 
               {/* Info */}
               <div className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-slate-900 mb-1">
+                <h3 className="text-lg font-semibold text-white mb-1">
                   {member.name}
                 </h3>
-                <p className="text-sm text-slate-600">
+                <p className="text-sm text-slate-300">
                   {member.role}
                 </p>
               </div>

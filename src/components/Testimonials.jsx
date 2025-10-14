@@ -1,28 +1,7 @@
 import { useState, useEffect } from "react";
 
-const StarIcon = () => (
-  <svg className="w-5 h-5 text-yellow-400 fill-current" viewBox="0 0 20 20">
-    <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-  </svg>
-);
-
-const QuoteIcon = () => (
-  <svg
-    className="w-8 h-8 text-blue-200 opacity-50"
-    fill="currentColor"
-    viewBox="0 0 32 32"
-  >
-    <path d="M10 8c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8zm16 0c-3.3 0-6 2.7-6 6v10h10V14h-4c0-2.2 1.8-4 4-4V8z" />
-  </svg>
-);
-
 const ChevronLeft = ({ className }) => (
-  <svg
-    className={className}
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
+  <svg className={className} fill="none" stroke="white" viewBox="0 0 24 24">
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -33,12 +12,7 @@ const ChevronLeft = ({ className }) => (
 );
 
 const ChevronRight = ({ className }) => (
-  <svg
-    className={className}
-    fill="none"
-    stroke="currentColor"
-    viewBox="0 0 24 24"
-  >
+  <svg className={className} fill="none" stroke="white" viewBox="0 0 24 24">
     <path
       strokeLinecap="round"
       strokeLinejoin="round"
@@ -48,75 +22,59 @@ const ChevronRight = ({ className }) => (
   </svg>
 );
 
-const TestimonialCard = ({ testimonial, isActive }) => (
-  <div
-    className={`transition-all duration-500 ${
-      isActive ? "opacity-100 translate-x-0" : "opacity-0 translate-x-8"
-    }`}
-  >
-    <div className="bg-white rounded-3xl p-8 md:p-10 shadow-xl shadow-blue-900/10 border border-slate-100 max-w-4xl mx-auto relative overflow-hidden">
-      {/* Background Quote Icon */}
-      <div className="absolute top-6 right-8">
-        <QuoteIcon />
-      </div>
-
-      {/* Rating Stars */}
-      <div className="flex items-center gap-1 mb-6">
-        {[...Array(5)].map((_, i) => (
-          <StarIcon key={i} />
-        ))}
-        <span className="text-slate-600 text-sm ml-2 font-medium">5.0</span>
-      </div>
-
-      {/* Testimonial Quote */}
-      <blockquote className="text-xl md:text-2xl text-slate-800 leading-relaxed mb-8 font-medium">
-        "{testimonial.description}"
-      </blockquote>
-
-      {/* Person Info & Stats */}
-      <div className="flex flex-col md:flex-row md:items-center md:justify-between gap-6">
-        {/* Person Info */}
-        <div className="flex items-center gap-4">
-          <div className="w-16 h-16 rounded-full overflow-hidden ring-4 ring-blue-100">
-            <img
-              src={testimonial.image}
-              alt={testimonial.name}
-              className="w-full h-full object-cover"
-            />
-          </div>
-          <div>
-            <h4 className="text-lg font-bold text-slate-900">
-              {testimonial.name}
-            </h4>
-            <p className="text-slate-600 text-sm">
-              {testimonial.designation} at{" "}
-              <span className="font-semibold text-blue-600">
-                {testimonial.company}
-              </span>
-            </p>
-          </div>
-        </div>
-
-        {/* Key Stats */}
-        <div className="flex gap-6 md:gap-8">
-          {testimonial.stats.slice(0, 2).map((stat, index) => (
-            <div key={index} className="text-center">
-              <div className="text-2xl md:text-3xl font-bold text-blue-600 mb-1">
-                {stat.value}
-              </div>
-              <div className="text-xs text-slate-500 font-medium uppercase tracking-wide">
-                {stat.label}
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
-    </div>
+const ImageCard = ({ image, name }) => (
+  <div className="rounded-2xl md:rounded-4xl overflow-hidden w-full max-w-[280px] sm:max-w-[320px] md:w-64 h-[250px] sm:h-[280px] md:h-[300px] flex-shrink-0 border border-gray-200">
+    <img src={image} alt={name} className="w-full h-full object-cover" />
   </div>
 );
 
+const ContentCard = ({ testimonial }) => (
+  <div className="bg-white rounded-2xl w-full max-w-[320px] sm:max-w-[400px] md:max-w-4xl h-auto min-h-[250px] sm:min-h-[280px] md:h-[300px] p-4 sm:p-6 md:p-8 flex flex-col justify-between border border-gray-200 shadow-sm">
+    {/* Upper Section */}
+    <div className="space-y-2 sm:space-y-3">
+      {/* Name & Role */}
+      <div>
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-bold text-gray-900 leading-tight">
+          {testimonial.name}
+        </h3>
+        <p className="text-[#2563eb] font-medium text-xs sm:text-sm mt-1">
+          {testimonial.designation} @ {testimonial.company}
+        </p>
+      </div>
+
+      {/* Heading / Highlight */}
+      {testimonial.heading && (
+        <h4 className="text-sm sm:text-base md:text-lg font-semibold text-[#3b82f6] my-1 sm:my-2">
+          {testimonial.heading}
+        </h4>
+      )}
+
+      {/* Description */}
+      <p className="text-gray-700 text-xs sm:text-sm md:text-sm leading-relaxed line-clamp-3 sm:line-clamp-4 md:line-clamp-3">
+        {testimonial.description}
+      </p>
+    </div>
+
+    {/* Stats Section */}
+    {testimonial.stats?.length > 0 && (
+      <div className="flex gap-3 sm:gap-4 md:gap-8 mt-3 sm:mt-4 flex-wrap border-t border-gray-100 pt-3 sm:pt-4">
+        {testimonial.stats.slice(0, 3).map((stat, index) => (
+          <div key={index} className="flex flex-col min-w-[60px] sm:min-w-[70px] flex-1">
+            <span className="text-[#2563eb] font-semibold text-base sm:text-lg md:text-xl">
+              {stat.value}
+            </span>
+            <span className="text-gray-500 text-[10px] sm:text-xs mt-1">{stat.label}</span>
+          </div>
+        ))}
+      </div>
+    )}
+  </div>
+);
+
+
 const Testimonials = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
+  const [isAutoScrolling, setIsAutoScrolling] = useState(true);
 
   const testimonials = [
     {
@@ -124,14 +82,27 @@ const Testimonials = () => {
       name: "Rajesh Kumar",
       designation: "CEO & Founder",
       company: "Kumar Enterprises",
+      heading: "Driving Growth with Data",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=500&fit=crop&crop=face",
       description:
-        "IndianGoods transformed our supply chain completely. The verified wholesaler network and transparent pricing helped us scale our business 3x faster than we ever imagined.",
+        "Insights from regional sales data inform strategic decisions such as market expansion, product launches, and form the promotional campaigns.",
       stats: [
-        { value: "3.65x", label: "Revenue Growth" },
-        { value: "98%", label: "Success Rate" },
-        { value: "100+", label: "Suppliers" },
+        {
+          value: "3.65x",
+          label: "Yearly Revenue",
+          description: "Another way to grow fast",
+        },
+        {
+          value: "98%",
+          label: "Monthly Conversions",
+          description: "On our website",
+        },
+        {
+          value: "100+",
+          label: "Verified Suppliers",
+          description: "Across India",
+        },
       ],
     },
     {
@@ -139,14 +110,27 @@ const Testimonials = () => {
       name: "Priya Sharma",
       designation: "Operations Manager",
       company: "Global Textiles",
+      heading: "Driving Growth with Data",
       image:
-        "https://plus.unsplash.com/premium_photo-1681074963522-00ca908dce4e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0",
+        "https://plus.unsplash.com/premium_photo-1681074963522-00ca908dce4e?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
       description:
-        "The platform's verified wholesaler network is incredible. We've built lasting partnerships that have transformed our entire supply chain operations and reduced costs significantly.",
+        "The platform's verified wholesaler network is incredible. We've built lasting partnerships that have transformed our entire supply chain operations.",
       stats: [
-        { value: "2.8x", label: "Efficiency" },
-        { value: "95%", label: "On-Time Delivery" },
-        { value: "25+", label: "Categories" },
+        {
+          value: "2.8x",
+          label: "Operational Efficiency",
+          description: "Streamlined processes",
+        },
+        {
+          value: "95%",
+          label: "On-Time Delivery",
+          description: "Customer satisfaction",
+        },
+        {
+          value: "25+",
+          label: "Product Categories",
+          description: "Available now",
+        },
       ],
     },
     {
@@ -154,13 +138,26 @@ const Testimonials = () => {
       name: "Amit Patel",
       designation: "Purchase Director",
       company: "Patel Industries",
+      heading: "Driving Growth with Data",
       image: "/northIndian.png",
       description:
-        "Trust and transparency are what set IndianGoods apart. Every transaction is smooth, every supplier is verified, and the support team is always there when we need them.",
+        "Trust and transparency are what set IndianGoods apart. Every transaction is smooth and every supplier is thoroughly verified for our peace of mind.",
       stats: [
-        { value: "24/7", label: "Support" },
-        { value: "99.2%", label: "Satisfaction" },
-        { value: "500+", label: "Orders" },
+        {
+          value: "24/7",
+          label: "Support Available",
+          description: "Round the clock",
+        },
+        {
+          value: "99.2%",
+          label: "Client Satisfaction",
+          description: "Verified reviews",
+        },
+        {
+          value: "500+",
+          label: "Successful Orders",
+          description: "This quarter",
+        },
       ],
     },
     {
@@ -168,108 +165,146 @@ const Testimonials = () => {
       name: "Sneha Reddy",
       designation: "Business Owner",
       company: "Reddy Exports",
+      heading: "Driving Growth with Data",
       image: "/sneha-reddy.png",
       description:
-        "As a growing business, finding reliable suppliers was our biggest challenge. IndianGoods made it simple and cost-effective to scale our operations beyond our expectations.",
+        "As a growing business, finding reliable suppliers was our biggest challenge. IndianGoods made it simple and cost-effective to scale our operations.",
       stats: [
-        { value: "4.2x", label: "Growth" },
-        { value: "150%", label: "Revenue Jump" },
-        { value: "30+", label: "Partners" },
+        {
+          value: "4.2x",
+          label: "Business Growth",
+          description: "Year over year",
+        },
+        {
+          value: "150%",
+          label: "Revenue Increase",
+          description: "Last 12 months",
+        },
+        {
+          value: "30+",
+          label: "Partner Suppliers",
+          description: "Verified network",
+        },
       ],
     },
   ];
 
-  // Auto scroll with pause on hover
+  // Auto scroll
   useEffect(() => {
-    const interval = setInterval(() => {
-      setCurrentIndex((prev) => (prev + 1) % testimonials.length);
-    }, 8000);
-    return () => clearInterval(interval);
-  }, [testimonials.length]);
+    if (isAutoScrolling) {
+      const interval = setInterval(() => {
+        setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+      }, 6000);
+      return () => clearInterval(interval);
+    }
+  }, [isAutoScrolling, testimonials.length]);
 
   const nextSlide = () => {
+    setIsAutoScrolling(false);
     setCurrentIndex((prev) => (prev + 1) % testimonials.length);
+    setTimeout(() => setIsAutoScrolling(true), 12000);
   };
 
   const prevSlide = () => {
+    setIsAutoScrolling(false);
     setCurrentIndex(
       (prev) => (prev - 1 + testimonials.length) % testimonials.length
     );
+    setTimeout(() => setIsAutoScrolling(true), 12000);
   };
 
   const goToSlide = (index) => {
+    setIsAutoScrolling(false);
     setCurrentIndex(index);
+    setTimeout(() => setIsAutoScrolling(true), 12000);
   };
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-slate-50 to-white w-full">
-      <div className="max-w-7xl mx-auto px-4 md:px-6 lg:px-8">
+    <section className="py-8 sm:py-12 md:py-16 bg-[#f8fafc] w-full">
+      <div className="max-w-8xl mx-auto px-3 sm:px-4 md:px-6 lg:px-8">
         {/* Header */}
-        <div className="text-center mb-16">
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-slate-900 mb-4">
-            Trusted by{" "}
-            <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent">
-              10,000+
-            </span>{" "}
-            Businesses
+        <div className="text-center mb-8 sm:mb-10 md:mb-12">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 sm:mb-4">
+            What our Partners Say
           </h2>
-          <p className="text-lg text-slate-600 max-w-2xl mx-auto leading-relaxed">
-            See how manufacturers and wholesalers across India are growing their
-            businesses with our platform.
+          <p className="text-gray-600 text-sm sm:text-base md:text-lg max-w-xs sm:max-w-2xl md:max-w-4xl mx-auto leading-relaxed px-2 sm:px-0">
+            Discover how businesses across India are transforming their
+            operations with our trusted wholesale platform.
           </p>
         </div>
 
-        {/* Testimonial Slider */}
+        {/* Cards Container */}
         <div className="relative">
-          {/* Main Testimonial */}
-          <div className="relative min-h-[400px] md:min-h-[350px]">
-            {testimonials.map((testimonial, index) => (
-              <div
-                key={testimonial.id}
-                className={`absolute inset-0 transition-all duration-700 ease-in-out ${
-                  index === currentIndex
-                    ? "opacity-100 translate-x-0"
-                    : index < currentIndex
-                    ? "opacity-0 -translate-x-full"
-                    : "opacity-0 translate-x-full"
-                }`}
-              >
-                <TestimonialCard
-                  testimonial={testimonial}
-                  isActive={index === currentIndex}
-                />
-              </div>
-            ))}
+          {/* Desktop Layout - Hidden on mobile/tablet */}
+          <div className="hidden md:flex items-start justify-center gap-8 lg:gap-12">
+            {/* Left Arrow */}
+            <button
+              onClick={prevSlide}
+              className="absolute left-0 top-1/2 -translate-y-1/2 bg-[#2563eb] p-3 rounded-full flex items-center justify-center hover:bg-[#1e40af] z-10"
+            >
+              <ChevronLeft className="w-6 h-6" />
+            </button>
+
+            {/* Image Card */}
+            <ImageCard
+              image={testimonials[currentIndex].image}
+              name={testimonials[currentIndex].name}
+            />
+
+            {/* Content Card */}
+            <ContentCard testimonial={testimonials[currentIndex]} />
+
+            {/* Right Arrow */}
+            <button
+              onClick={nextSlide}
+              className="absolute right-0 top-1/2 -translate-y-1/2 bg-[#2563eb] p-3 rounded-full flex items-center justify-center hover:bg-[#1e40af] z-10"
+            >
+              <ChevronRight className="w-6 h-6" />
+            </button>
           </div>
 
-          {/* Navigation Arrows */}
-          <button
-            onClick={prevSlide}
-            className="absolute left-4 md:-left-16 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-blue-600 hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
-          >
-            <ChevronLeft className="w-6 h-6" />
-          </button>
+          {/* Mobile & Tablet Layout - Stacked vertically */}
+          <div className="md:hidden">
+            <div className="flex flex-col items-center gap-4 sm:gap-6">
+              {/* Image Card */}
+              <ImageCard
+                image={testimonials[currentIndex].image}
+                name={testimonials[currentIndex].name}
+              />
 
-          <button
-            onClick={nextSlide}
-            className="absolute right-4 md:-right-16 top-1/2 -translate-y-1/2 w-12 h-12 bg-white rounded-full shadow-lg flex items-center justify-center text-slate-700 hover:text-blue-600 hover:shadow-xl transition-all duration-300 hover:scale-110 z-10"
-          >
-            <ChevronRight className="w-6 h-6" />
-          </button>
+              {/* Content Card */}
+              <ContentCard testimonial={testimonials[currentIndex]} />
+            </div>
+
+            {/* Mobile Navigation */}
+            <div className="flex justify-center gap-4 mt-6">
+              <button
+                onClick={prevSlide}
+                className="bg-[#2563eb] p-2.5 sm:p-3 rounded-full flex items-center justify-center hover:bg-[#1e40af] transition-colors shadow-lg active:scale-95"
+              >
+                <ChevronLeft className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+              <button
+                onClick={nextSlide}
+                className="bg-[#2563eb] p-2.5 sm:p-3 rounded-full flex items-center justify-center hover:bg-[#1e40af] transition-colors shadow-lg active:scale-95"
+              >
+                <ChevronRight className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+            </div>
+          </div>
         </div>
 
         {/* Dots Navigation */}
-        <div className="flex justify-center mt-12 gap-3">
+        <div className="flex justify-center mt-6 sm:mt-8 gap-2 sm:gap-3">
           {testimonials.map((_, index) => (
             <button
               key={index}
               onClick={() => goToSlide(index)}
-              className={`transition-all duration-300 rounded-full ${
+              className={`rounded-full transition-all duration-500 ${
                 index === currentIndex
-                  ? "w-8 h-3 bg-blue-600"
-                  : "w-3 h-3 bg-slate-300 hover:bg-slate-400"
+                  ? "w-6 sm:w-8 h-2 bg-[#2563eb]"
+                  : "w-2 h-2 bg-gray-400 hover:bg-gray-500"
               }`}
-              aria-label={`Go to testimonial ${index + 1}`}
             />
           ))}
         </div>
