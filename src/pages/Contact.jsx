@@ -54,41 +54,41 @@ const Contact = () => {
   };
 
   return (
-    <div className="min-h-screen bg-white">
-      <Navbar isHomePage={true} />
-      
-      <HeroSection
-        heading="Get in Touch"
-        subheading="Ready to discuss your project? We'd love to hear from you and help bring your ideas to life."
-      />
+    <div className="min-h-screen bg-[#fdfdfe] text-[#0f172a]">
+      <Navbar isHomePage={false} />
 
-      {/* Contact Section - Section 1: Light Gray */}
-      <section className="py-20 px-4 bg-[#fdfdfe]">{}
+      {/* <HeroSection
+        heading="Get in Touch"
+        subheading="We’re here to help you create something amazing. Let’s start the conversation today."
+      /> */}
+
+      {/* Contact Section */}
+      <section className="py-30 px-4 bg-[#fdfdfe]">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-3 gap-16 items-start">
             {/* Left: Contact Form */}
             <div className="lg:col-span-2">
               <div className="text-center mb-12">
-                <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase">
+                <span className="text-[#0f172a] font-semibold text-sm tracking-wider uppercase">
                   Contact Us
                 </span>
-                <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mt-3 mb-4">
+                <h2 className="text-3xl md:text-4xl font-bold text-[#0f172a] mt-3 mb-4">
                   Send us a message
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 mx-auto rounded-full"></div>
+                <div className="w-20 h-1 bg-[#0f172a] mx-auto rounded-full"></div>
               </div>
 
               <form className="space-y-6">
                 <div className="grid sm:grid-cols-2 gap-6">
                   <div>
-                    <label className="block text-base font-semibold text-gray-700 mb-2">
+                    <label className="block text-base font-semibold text-[#0f172a] mb-2">
                       Full Name *
                     </label>
                     <input
                       type="text"
                       name="name"
                       placeholder="Enter your name"
-                      className={`w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-200 text-lg ${
+                      className={`w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0f172a] transition-all duration-200 text-lg ${
                         errors.name ? "border-red-500" : ""
                       }`}
                       value={formData.name}
@@ -99,14 +99,14 @@ const Contact = () => {
                     )}
                   </div>
                   <div>
-                    <label className="block text-base font-semibold text-gray-700 mb-2">
+                    <label className="block text-base font-semibold text-[#0f172a] mb-2">
                       Phone Number *
                     </label>
                     <input
                       type="tel"
                       name="phone"
                       placeholder="Enter your phone number"
-                      className={`w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-200 text-lg ${
+                      className={`w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0f172a] transition-all duration-200 text-lg ${
                         errors.phone ? "border-red-500" : ""
                       }`}
                       value={formData.phone}
@@ -121,42 +121,42 @@ const Contact = () => {
                 </div>
 
                 <div>
-                  <label className="block text-base font-semibold text-gray-700 mb-2">
+                  <label className="block text-base font-semibold text-[#0f172a] mb-2">
                     Email Address
                   </label>
                   <input
                     type="email"
                     name="email"
                     placeholder="your.email@company.com (optional)"
-                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-200 text-lg"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0f172a] transition-all duration-200 text-lg"
                     value={formData.email}
                     onChange={handleChange}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-base font-semibold text-gray-700 mb-2">
+                  <label className="block text-base font-semibold text-[#0f172a] mb-2">
                     Company
                   </label>
                   <input
                     type="text"
                     name="company"
                     placeholder="Your company name (optional)"
-                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-200 text-lg"
+                    className="w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0f172a] transition-all duration-200 text-lg"
                     value={formData.company}
                     onChange={handleChange}
                   />
                 </div>
 
                 <div>
-                  <label className="block text-base font-semibold text-gray-700 mb-2">
+                  <label className="block text-base font-semibold text-[#0f172a] mb-2">
                     Message *
                   </label>
                   <textarea
                     name="message"
                     placeholder="Tell us about your project..."
                     rows="6"
-                    className={`w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-600 focus:border-blue-600 transition-all duration-200 resize-none text-lg ${
+                    className={`w-full px-5 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-[#0f172a] transition-all duration-200 resize-none text-lg ${
                       errors.message ? "border-red-500" : ""
                     }`}
                     value={formData.message}
@@ -172,7 +172,7 @@ const Contact = () => {
                 <button
                   onClick={handleSubmit}
                   disabled={loading}
-                  className="w-full bg-blue-600 hover:bg-blue-700 text-white py-4 px-8 rounded-xl font-semibold text-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
+                  className="w-full bg-[#0f172a] hover:bg-[#1e293b] text-white py-4 px-8 rounded-xl font-semibold text-lg transition-all duration-200 disabled:opacity-50 disabled:cursor-not-allowed shadow-md hover:shadow-lg transform hover:-translate-y-0.5"
                 >
                   {loading ? "Sending..." : "Send Message"}
                 </button>
@@ -194,13 +194,13 @@ const Contact = () => {
             {/* Right: Contact Info */}
             <div className="lg:col-span-1 flex flex-col justify-start space-y-10">
               <div className="text-center lg:text-left">
-                <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase">
+                <span className="text-[#0f172a] font-semibold text-sm tracking-wider uppercase">
                   Get in Touch
                 </span>
-                <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mt-3 mb-4">
+                <h2 className="text-2xl md:text-3xl font-bold text-[#0f172a] mt-3 mb-4">
                   Contact Info
                 </h2>
-                <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full mb-8 mx-auto lg:mx-0"></div>
+                <div className="w-20 h-1 bg-[#0f172a] rounded-full mb-8 mx-auto lg:mx-0"></div>
               </div>
 
               {[
@@ -230,25 +230,25 @@ const Contact = () => {
                   key={idx}
                   className="flex items-start gap-4 hover:translate-x-1 transition-transform cursor-pointer"
                 >
-                  <span className="text-blue-600 text-2xl mt-1">
+                  <span className="text-[#0f172a] text-2xl mt-1">
                     {item.icon}
                   </span>
                   <div>
-                    <h3 className="font-semibold text-gray-800">{item.title}</h3>
-                    <p className="text-gray-600">{item.text}</p>
+                    <h3 className="font-semibold text-[#0f172a]">{item.title}</h3>
+                    <p className="text-gray-700">{item.text}</p>
                   </div>
                 </div>
               ))}
 
               {/* Social Media */}
               <div className="mt-12">
-                <h3 className="font-semibold text-gray-800 mb-4">Follow Us</h3>
+                <h3 className="font-semibold text-[#0f172a] mb-4">Follow Us</h3>
                 <div className="flex gap-6">
                   {[<FaFacebook />, <FaTwitter />, <FaLinkedin />, <FaInstagram />].map(
                     (icon, idx) => (
                       <span
                         key={idx}
-                        className="text-blue-600 text-2xl cursor-pointer hover:text-cyan-400 hover:scale-110 transition-transform"
+                        className="text-[#0f172a] text-2xl cursor-pointer hover:text-[#1e293b] hover:scale-110 transition-transform"
                       >
                         {icon}
                       </span>
