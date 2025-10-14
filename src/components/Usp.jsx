@@ -1,121 +1,118 @@
 import {
-  CreditCardIcon,
-  Crosshair,
-  DollarSignIcon,
-  HelpingHandIcon,
+  CreditCard,
+  Target,
+  DollarSign,
+  HandHeart,
 } from "lucide-react";
 
 function Usp() {
   return (
-    <section
-      className=" bg-gray-100 w-full flex flex-col items-center justify-center"
-      style={{ background: "var(--bg-gradient-light)" }}
-    >
-      <div className="max-w-7xl my-16 px-12 grid grid-cols-1 lg:grid-cols-2 place-items-center gap-12">
-        <div className="space-y-8">
-          <h1 className="text-4xl md:text-6xl uppercase font-oswald font-semibold text-center md:text-start text-slate-800">
-            Let's Start{" "}
-            {/* <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent"> */}
-            sending your money
-            {/* </span> */}
-          </h1>
-          <p className="text-slate-600 md:text-lg leading-snug">
-            Send money securely and track every transaction in real time —
-            anywhere, anytime.
-          </p>
-
-          <div className="mt-10 space-y-2 md:space-y-4">
-            <div className="flex items-center justify-start gap-4">
-              <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-2xl shadow-lg">
-                <HelpingHandIcon className="w-6 md:w-8 h-6 md:h-8 text-white" />
-              </div>
-              <h1 className="text-xl md:text-2xl font-semibold text-slate-800">
-                Access 24/7 Customer Support
-              </h1>
-            </div>
-            <p className="text-slate-600">
-              Get assistance anytime with our dedicated support team ready to
-              help with any issues or questions
+    <section className="bg-[#fdfdfe] w-full">
+      {/* First Section */}
+      <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+          <div className="space-y-6">
+            <h2 className="text-4xl md:text-5xl font-bold text-[#0f172a] leading-tight">
+              Send Money with Confidence
+            </h2>
+            <p className="text-lg text-[#0f172a]/70 leading-relaxed">
+              Secure transactions with real-time tracking. Enterprise-grade infrastructure for businesses that demand reliability.
             </p>
-          </div>
-          <div className="mt-10 space-y-2 md:space-y-4">
-            <div className="flex items-center justify-start gap-4">
-              <div className="bg-gradient-to-br from-blue-600 to-blue-700 p-2 rounded-2xl shadow-lg">
-                <Crosshair className="w-6 md:w-8 h-6 md:h-8 text-white" />
-              </div>
-              <h1 className="text-xl md:text-2xl font-semibold text-slate-800">
-                Track Transition in Real-Time
-              </h1>
-            </div>
-            <p className="text-slate-600">
-              Monitor the status of your transactions with instant updates and
-              notifications
-            </p>
-          </div>
-        </div>
 
-        <div className="w-full h-auto">
-          <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-            <img
-              src="https://placehold.co/400?text=Placeholder"
-              alt="Financial Management"
-              className="w-full h-full object-cover"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
+            <div className="pt-6 space-y-8">
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#0f172a] rounded-lg flex items-center justify-center">
+                  <HandHeart className="w-6 h-6 text-[#fdfdfe]" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-xl font-semibold text-[#0f172a]">
+                    24/7 Customer Support
+                  </h3>
+                  <p className="text-[#0f172a]/60 leading-relaxed">
+                    Dedicated support team available around the clock to resolve any issues
+                  </p>
+                </div>
+              </div>
+
+              <div className="flex items-start gap-4">
+                <div className="flex-shrink-0 w-12 h-12 bg-[#0f172a] rounded-lg flex items-center justify-center">
+                  <Target className="w-6 h-6 text-[#fdfdfe]" />
+                </div>
+                <div className="space-y-1">
+                  <h3 className="text-xl font-semibold text-[#0f172a]">
+                    Real-Time Transaction Tracking
+                  </h3>
+                  <p className="text-[#0f172a]/60 leading-relaxed">
+                    Complete visibility with instant updates and status notifications
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div className="order-first lg:order-last">
+            <div className="relative rounded-2xl overflow-hidden border border-[#0f172a]/10">
+              <img
+                src="https://placehold.co/600x500/0f172a/fdfdfe?text=Financial+Platform"
+                alt="Financial Management"
+                className="w-full h-full object-cover"
+              />
+            </div>
           </div>
         </div>
       </div>
-      <div className="bg-[#f0f6ff] w-full flex items-center justify-center">
-        <div className="max-w-7xl my-16 px-12 grid grid-cols-1 lg:grid-cols-2 place-items-center gap-12">
-          <div className="space-y-8">
-            <h1 className="text-4xl md:text-6xl uppercase font-oswald font-semibold text-center md:text-start text-slate-800">
-              Save your{" "}
-              {/* <span className="bg-gradient-to-r from-blue-600 to-blue-700 bg-clip-text text-transparent"> */}
-              time and money with us
-              {/* </span>{" "} */}
-            </h1>
-            <p className="text-slate-600 md:text-lg leading-snug">
-              Build your SaaS site faster with ready-to-use professional tools
-              and automated workflows.
-            </p>
 
-            <div className="mt-10 space-y-2 md:space-y-4">
-              <div className="flex items-center justify-start gap-4">
-                <div className="bg-gradient-to-br from-blue-500 to-blue-600 p-2 rounded-2xl shadow-lg">
-                  <CreditCardIcon className="w-6 md:w-8 h-6 md:h-8 text-white" />
-                </div>
-                <h1 className="text-xl md:text-2xl font-semibold text-slate-800">
-                  Loan and Credit Management
-                </h1>
+      {/* Second Section */}
+      <div className="bg-[#0f172a] w-full">
+        <div className="max-w-7xl mx-auto px-6 md:px-12 py-20 md:py-28">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-20 items-center">
+            <div>
+              <div className="relative rounded-2xl overflow-hidden border border-[#fdfdfe]/10">
+                <img
+                  src="https://placehold.co/600x500/fdfdfe/0f172a?text=Money+Management"
+                  alt="Money Management"
+                  className="w-full h-full object-cover"
+                />
               </div>
-              <p className="text-slate-600">
-                Get assistance anytime with our dedicated support team ready to
-                help with any issues or questions
-              </p>
             </div>
-            <div className="mt-10 space-y-2 md:space-y-4">
-              <div className="flex items-center justify-start gap-4">
-                <div className="bg-gradient-to-br from-blue-700 to-blue-800 p-2 rounded-2xl shadow-lg">
-                  <DollarSignIcon className="w-6 md:w-8 h-6 md:h-8 text-white" />
+
+            <div className="space-y-6">
+              <h2 className="text-4xl md:text-5xl font-bold text-[#fdfdfe] leading-tight">
+                Streamline Your Financial Operations
+              </h2>
+              <p className="text-lg text-[#fdfdfe]/70 leading-relaxed">
+                Comprehensive tools designed for modern businesses. Manage multiple currencies and credit facilities from one platform.
+              </p>
+
+              <div className="pt-6 space-y-8">
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#fdfdfe] rounded-lg flex items-center justify-center">
+                    <CreditCard className="w-6 h-6 text-[#0f172a]" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-xl font-semibold text-[#fdfdfe]">
+                      Loan and Credit Management
+                    </h3>
+                    <p className="text-[#fdfdfe]/60 leading-relaxed">
+                      Flexible financing options with transparent terms and instant approval workflows
+                    </p>
+                  </div>
                 </div>
-                <h1 className="text-xl md:text-2xl font-semibold text-slate-800">
-                  Multi-Currency Accounts
-                </h1>
+
+                <div className="flex items-start gap-4">
+                  <div className="flex-shrink-0 w-12 h-12 bg-[#fdfdfe] rounded-lg flex items-center justify-center">
+                    <DollarSign className="w-6 h-6 text-[#0f172a]" />
+                  </div>
+                  <div className="space-y-1">
+                    <h3 className="text-xl font-semibold text-[#fdfdfe]">
+                      Multi-Currency Accounts
+                    </h3>
+                    <p className="text-[#fdfdfe]/60 leading-relaxed">
+                      Operate globally with support for 150+ currencies and real-time exchange rates
+                    </p>
+                  </div>
+                </div>
               </div>
-              <p className="text-slate-600">
-                Monitor the status of your transactions with instant updates and
-                notifications across multiple currencies
-              </p>
-            </div>
-          </div>
-          <div className="w-full h-auto object-cover">
-            <div className="relative overflow-hidden rounded-3xl shadow-2xl">
-              <img
-                src="https://placehold.co/400?text=Placeholder"
-                alt="Money Management"
-                className="w-full h-full object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-blue-900/20 to-transparent"></div>
             </div>
           </div>
         </div>

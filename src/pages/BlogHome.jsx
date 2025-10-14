@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { initializeSampleBlogs } from "../data/sampleBlogs";
 import Navbar from "../components/Navbar";
+import HeroSection from "../components/Headers";
 
 const BlogHome = () => {
   const [blogs, setBlogs] = useState([]);
@@ -76,7 +77,14 @@ const BlogHome = () => {
   return (
     <div className="min-h-screen bg-gray-50">
       <Navbar />
-      {/* Hero Section */}
+
+      <HeroSection
+              heading="Inside IndianGoods: Stories"
+              subheading="Discover insights about Indian manufacturing, B2B trade
+              strategies, export opportunities, and real success stories from
+              exporters and global buyers."
+            />
+      {/* Hero Section
       <section
         className=" pt-32 pb-16 px-4 relative overflow-hidden"
         style={{
@@ -97,7 +105,7 @@ const BlogHome = () => {
             </p>
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Recent Posts Section */}
       <section className="py-16 px-4 bg-white">
