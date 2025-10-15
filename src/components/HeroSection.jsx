@@ -18,7 +18,7 @@ export default function HeroSection() {
 
   return (
     <section
-      className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24"
+      className="relative flex min-h-[90vh] w-full items-center justify-center overflow-hidden pt-24 py-12"
       style={{
         background: "var(--bg-gradient-dark)",
       }}
