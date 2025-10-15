@@ -12,6 +12,9 @@ import Footer from "../components/Footer";
 import HeroSection from "../components/Headers";
 import TeamSection from "../components/about/MeetTeam";
 import Lottie from "lottie-react";
+import { SparklesCore } from "../components/ui/sparkles";
+import FeatureSectionDemo from "../components/ui/features-section-demo-1";
+import { CyberneticBentoGrid } from "@/components/cybernetic-bento-grid";
 
 // ✅ Simple Reusable Button Component
 const Button = ({
@@ -48,7 +51,7 @@ const AboutUs = () => {
   const [animationData, setAnimationData] = useState(null);
 
   useEffect(() => {
-    fetch("/animations/about.json")
+    fetch("/about.json")
       .then((res) => res.json())
       .then((data) => setAnimationData(data))
       .catch((err) => console.error("Error loading Lottie animation:", err));
@@ -91,10 +94,37 @@ const AboutUs = () => {
     <div className="min-h-screen bg-[#fdfdfe]">
       <Navbar isHomePage={true} />
 
-      <HeroSection
+      {/* <HeroSection
         heading="About IndianGoods"
         subheading="Connecting cultures through authentic Indian craftsmanship and innovation."
-      />
+      /> */}
+
+      <div className="h-[20rem] w-full bg-[#0f172a] flex flex-col items-center justify-center overflow-hidden">
+        <h1 className="md:text-6xl text-3xl lg:text-8xl font-bold text-center text-white relative z-20">
+          About Us
+        </h1>
+
+        <div className="w-[32rem] h-20 relative">
+          {/* Gradient lines */}
+          <div className="absolute inset-x-16 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+          <div className="absolute inset-x-16 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+          <div className="absolute inset-x-40 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[4px] w-1/4 blur-sm" />
+          <div className="absolute inset-x-40 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+
+          {/* Sparkles Effect */}
+          <SparklesCore
+            background="transparent"
+            minSize={0.4}
+            maxSize={1}
+            particleDensity={900}
+            className="w-full h-full"
+            particleColor="#FFFFFF"
+          />
+
+          {/* Soft radial fade to blend edges */}
+          <div className="absolute inset-0 w-full h-full bg-[#0f172a] [mask-image:radial-gradient(300px_150px_at_top,transparent_25%,white)]"></div>
+        </div>
+      </div>
 
       {/* Section 1 — Our Story */}
       <section className="py-24 px-6 bg-[#fdfdfe] text-[#0f172a]">
@@ -147,14 +177,15 @@ const AboutUs = () => {
           </div>
 
           {/* Highlighted Info */}
-          <div className="bg-[#fdfdfe] border-l-4 border-[#0f172a] rounded-2xl px-10 py-10 shadow-sm hover:shadow-md transition-shadow">
-            <p className="text-xl leading-relaxed">
-              We connect global businesses with genuine Indian manufacturers and
-              suppliers. From handcrafted goods to contemporary innovations, our
-              curated selection symbolizes India’s diversity, integrity, and
-              quality — building stronger global ties through trade.
-            </p>
-          </div>
+          <div className="bg-[#0f172a] border-l-4 border-[#14b8a6] rounded-2xl px-10 py-10 shadow-md hover:shadow-lg transition-shadow">
+  <p className="text-xl leading-relaxed text-gray-200">
+    We connect global businesses with genuine Indian manufacturers and
+    suppliers. From handcrafted goods to contemporary innovations, our
+    curated selection symbolizes India’s diversity, integrity, and
+    quality — building stronger global ties through trade.
+  </p>
+</div>
+
         </div>
       </section>
 
@@ -186,10 +217,10 @@ const AboutUs = () => {
                 </div>
 
                 <blockquote className="text-lg md:text-xl leading-relaxed font-light italic mb-6">
-                  "IndianGoods was born from a simple belief — that every artisan
-                  deserves a global stage. Each connection we make builds a
-                  bridge between tradition and innovation, between India and the
-                  world."
+                  "IndianGoods was born from a simple belief — that every
+                  artisan deserves a global stage. Each connection we make
+                  builds a bridge between tradition and innovation, between
+                  India and the world."
                 </blockquote>
               </div>
 
@@ -219,7 +250,7 @@ const AboutUs = () => {
       </section>
 
       {/* Section 3 — Core Values */}
-      <section className="py-24 px-6 bg-[#fdfdfe] text-[#0f172a]">
+      {/* <section className="py-24 px-6 bg-[#fdfdfe] text-[#0f172a]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <span className="font-semibold text-sm tracking-wider uppercase text-[#0f172a]/80">
@@ -244,7 +275,11 @@ const AboutUs = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <CyberneticBentoGrid />
+
+      {/* <FeatureSectionDemo /> */}
 
       {/* Meet the Team */}
       <TeamSection />
