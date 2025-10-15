@@ -7,6 +7,16 @@ import { useState, useEffect } from "react";
 
 export default function HeroSection() {
   const [animationData, setAnimationData] = useState(null);
+  const [currentWordIndex, setCurrentWordIndex] = useState(0);
+  const [isAnimating, setIsAnimating] = useState(false);
+
+  const words = [
+    "WHOLESALERS",
+    "SUPPLIERS",
+    "DISTRIBUTORS",
+    "RETAILERS",
+    "MERCHANTS",
+  ];
 
   // ✅ Load Lottie animation from public folder
   useEffect(() => {
@@ -14,6 +24,21 @@ export default function HeroSection() {
       .then((res) => res.json())
       .then((data) => setAnimationData(data))
       .catch((err) => console.error("Error loading Lottie animation:", err));
+  }, []);
+
+  // Word cycling animation
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setIsAnimating(true);
+      setTimeout(() => {
+        setCurrentWordIndex((prev) => (prev + 1) % words.length);
+        setTimeout(() => {
+          setIsAnimating(false);
+        }, 100);
+      }, 400);
+    }, 3000);
+
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -41,15 +66,30 @@ export default function HeroSection() {
               CONNECT WITH
               <br />
               <span className="bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent">
-                MILLIONS OF <br />
-                WHOLESALERS
+                MILLIONS OF
+              </span>
+              <br />
+              <span
+                className="inline-block bg-gradient-to-r from-blue-400 via-blue-500 to-blue-600 bg-clip-text text-transparent"
+                style={{
+                  minWidth: "300px",
+                  display: "inline-block",
+                  minHeight: "1.2em",
+                  opacity: isAnimating ? 0 : 1,
+                  transform: isAnimating
+                    ? "translateY(8px) scale(0.95)"
+                    : "translateY(0px) scale(1)",
+                  transition: "all 0.5s ease-in-out",
+                }}
+              >
+                {words[currentWordIndex] || "WHOLESALERS"}
               </span>
             </h1>
 
             <p className="text-base md:text-lg lg:text-[1.125rem] text-slate-300 max-w-lg leading-relaxed mx-auto lg:mx-0 pointer-events-none">
               Scale your manufacturing business by connecting with verified
-              wholesalers across India. Quality assured, competitive prices, and
-              reliable delivery.
+              business partners across India. Quality assured, competitive
+              prices, and reliable delivery.
             </p>
           </div>
 
