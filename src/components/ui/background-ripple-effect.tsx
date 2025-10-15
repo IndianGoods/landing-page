@@ -30,15 +30,24 @@ export const BackgroundRippleEffect = ({
   }, [cellSize]);
 
   return (
+    // <div
+    //   ref={ref}
+    //   className={cn(
+    //     "absolute inset-0 h-screen w-screen overflow-hidden opacity-70",
+    //     // 💡 Much lighter neutral tones with reduced visibility
+    //     "[--cell-border-color:rgba(0,0,0,0.03)] [--cell-fill-color:rgba(0,0,0,0.008)] [--cell-shadow-color:rgba(0,0,0,0.04)]",
+    //     "dark:[--cell-border-color:rgba(255,255,255,0.04)] dark:[--cell-fill-color:rgba(255,255,255,0.01)] dark:[--cell-shadow-color:rgba(255,255,255,0.025)]"
+    //   )}
+    // >
     <div
-      ref={ref}
-      className={cn(
-        "absolute inset-0 h-screen w-screen overflow-hidden opacity-70",
-        // 💡 Much lighter neutral tones with reduced visibility
-        "[--cell-border-color:rgba(0,0,0,0.03)] [--cell-fill-color:rgba(0,0,0,0.008)] [--cell-shadow-color:rgba(0,0,0,0.04)]",
-        "dark:[--cell-border-color:rgba(255,255,255,0.04)] dark:[--cell-fill-color:rgba(255,255,255,0.01)] dark:[--cell-shadow-color:rgba(255,255,255,0.025)]"
-      )}
-    >
+  ref={ref}
+  className={cn(
+    "absolute inset-0 h-screen w-screen overflow-hidden opacity-70",
+    "[--cell-border-color:rgba(0,0,0,0.1)] [--cell-fill-color:rgba(0,0,0,0.02)] [--cell-shadow-color:rgba(0,0,0,0.04)]",
+    "dark:[--cell-border-color:rgba(255,255,255,0.1)] dark:[--cell-fill-color:rgba(255,255,255,0.02)] dark:[--cell-shadow-color:rgba(255,255,255,0.05)]"
+  )}
+>
+
       <DivGrid
         key={`grid-${rippleKey}`}
         rows={gridSize.rows}

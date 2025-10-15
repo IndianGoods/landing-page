@@ -6,15 +6,17 @@ import {
   Palette,
   ShieldCheck,
   Leaf,
-  ShoppingBag,
 } from "lucide-react";
 import Navbar from "../components/Navbar";
 import Footer from "../components/Footer";
 import HeroSection from "../components/Headers";
 import TeamSection from "../components/about/MeetTeam";
 import Lottie from "lottie-react";
+import { SparklesCore } from "../components/ui/sparkles";
+import FeatureSectionDemo from "../components/ui/features-section-demo-1";
+import { CyberneticBentoGrid } from "@/components/cybernetic-bento-grid";
 
-// ✅ Simple reusable Button component
+// ✅ Simple Reusable Button Component
 const Button = ({
   children,
   size = "default",
@@ -29,8 +31,9 @@ const Button = ({
     lg: "px-6 py-3 text-base",
   };
   const variantClasses = {
-    default: "bg-primary text-white hover:bg-primary/90",
-    outline: "border-2 bg-transparent hover:bg-white/10",
+    default: "bg-[#0f172a] text-[#fdfdfe] hover:bg-[#1e293b]",
+    outline:
+      "border-2 border-[#0f172a] text-[#0f172a] hover:bg-[#0f172a] hover:text-[#fdfdfe]",
   };
 
   return (
@@ -43,11 +46,10 @@ const Button = ({
   );
 };
 
-// ✅ AboutUs Component
+// ✅ About Us Page
 const AboutUs = () => {
   const [animationData, setAnimationData] = useState(null);
 
-  // Fetch Lottie animation dynamically
   useEffect(() => {
     fetch("/about.json")
       .then((res) => res.json())
@@ -58,82 +60,109 @@ const AboutUs = () => {
   const values = [
     {
       title: "Trust & Transparency",
-      desc: "Building lasting relationships through honest communication and clear business practices.",
-      icon: <Handshake className="w-8 h-8 text-blue-800" />,
+      desc: "We believe in honest communication and genuine partnerships, fostering trust that lasts.",
+      icon: <Handshake className="w-8 h-8 text-[#0f172a]" />,
     },
     {
       title: "Innovation",
-      desc: "Leveraging cutting-edge technology to create seamless trade experiences.",
-      icon: <Lightbulb className="w-8 h-8 text-blue-800" />,
+      desc: "Embracing technology to craft seamless, efficient, and impactful trade experiences.",
+      icon: <Lightbulb className="w-8 h-8 text-[#0f172a]" />,
     },
     {
       title: "Cultural Heritage",
-      desc: "Preserving and promoting India's rich craftsmanship and traditional excellence.",
-      icon: <Palette className="w-8 h-8 text-blue-800" />,
+      desc: "Celebrating India’s craftsmanship by sharing its beauty and authenticity with the world.",
+      icon: <Palette className="w-8 h-8 text-[#0f172a]" />,
     },
     {
       title: "Quality Assurance",
-      desc: "Maintaining the highest standards through rigorous supplier vetting and product checks.",
-      icon: <ShieldCheck className="w-8 h-8 text-blue-800" />,
+      desc: "Delivering excellence through careful selection, strict standards, and continuous improvement.",
+      icon: <ShieldCheck className="w-8 h-8 text-[#0f172a]" />,
     },
     {
       title: "Sustainability",
-      desc: "Supporting eco-friendly practices and responsible sourcing for a better tomorrow.",
-      icon: <Leaf className="w-8 h-8 text-blue-800" />,
+      desc: "Encouraging eco-friendly sourcing and production for a sustainable global future.",
+      icon: <Leaf className="w-8 h-8 text-[#0f172a]" />,
     },
     {
       title: "Global Collaboration",
-      desc: "Fostering international partnerships that benefit businesses across borders.",
-      icon: <Globe className="w-8 h-8 text-blue-800" />,
+      desc: "Uniting businesses across continents to strengthen international commerce and understanding.",
+      icon: <Globe className="w-8 h-8 text-[#0f172a]" />,
     },
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#fdfdfe]">
       <Navbar isHomePage={true} />
 
-      <HeroSection
+      {/* <HeroSection
         heading="About IndianGoods"
-        subheading="Connecting cultures through authentic Indian commerce and craftsmanship."
-      />
+        subheading="Connecting cultures through authentic Indian craftsmanship and innovation."
+      /> */}
 
-      {/* Our Story Section */}
-      <section className="py-24 px-6 bg-[#fdfdfe]">
+      <div className="h-[20rem] w-full bg-[#0f172a] flex flex-col items-center justify-center overflow-hidden">
+        <h1 className="md:text-6xl text-3xl lg:text-8xl font-bold text-center text-white relative z-20">
+          About Us
+        </h1>
+
+        <div className="w-[32rem] h-20 relative">
+          {/* Gradient lines */}
+          <div className="absolute inset-x-16 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-[2px] w-3/4 blur-sm" />
+          <div className="absolute inset-x-16 top-0 bg-gradient-to-r from-transparent via-indigo-500 to-transparent h-px w-3/4" />
+          <div className="absolute inset-x-40 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-[4px] w-1/4 blur-sm" />
+          <div className="absolute inset-x-40 top-0 bg-gradient-to-r from-transparent via-sky-500 to-transparent h-px w-1/4" />
+
+          {/* Sparkles Effect */}
+          <SparklesCore
+            background="transparent"
+            minSize={0.4}
+            maxSize={1}
+            particleDensity={900}
+            className="w-full h-full"
+            particleColor="#FFFFFF"
+          />
+
+          {/* Soft radial fade to blend edges */}
+          <div className="absolute inset-0 w-full h-full bg-[#0f172a] [mask-image:radial-gradient(300px_150px_at_top,transparent_25%,white)]"></div>
+        </div>
+      </div>
+
+      {/* Section 1 — Our Story */}
+      <section className="py-24 px-6 bg-[#fdfdfe] text-[#0f172a]">
         <div className="max-w-7xl mx-auto">
           <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
-            {/* Left Content */}
+            {/* Left */}
             <div>
-              <div className="inline-block bg-blue-600/10 px-4 py-1 rounded-full mb-4">
-                <span className="text-blue-600 font-semibold text-sm tracking-wider uppercase">
+              <div className="inline-block bg-[#0f172a]/10 px-4 py-1 rounded-full mb-4">
+                <span className="text-[#0f172a] font-semibold text-sm tracking-wider uppercase">
                   Our Story
                 </span>
               </div>
 
               <h2 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight mb-6">
                 Connecting{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-cyan-400">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#0f172a] to-blue-400">
                   Cultures
                 </span>{" "}
                 Through Commerce
               </h2>
 
-              <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 rounded-full mb-8"></div>
+              <div className="w-20 h-1 bg-[#0f172a] rounded-full mb-8"></div>
 
-              <p className="text-gray-700 text-lg leading-relaxed mb-5">
-                IndianGoods was born from a passion to bridge cultures and bring
-                the rich heritage of Indian craftsmanship to global markets.
-                Every product tells a story, and every purchase supports the
-                artisans and entrepreneurs of India.
+              <p className="text-lg leading-relaxed mb-5">
+                IndianGoods was founded with a vision to bridge cultures and
+                bring the spirit of Indian craftsmanship to global markets. Each
+                product we showcase represents the dedication, creativity, and
+                soul of an artisan.
               </p>
 
-              <p className="text-gray-700 text-lg leading-relaxed">
-                Our platform is more than a marketplace — it’s a movement to
-                empower Indian businesses and share our culture with the world
-                through trusted B2B partnerships.
+              <p className="text-lg leading-relaxed">
+                We go beyond being a marketplace — we are a movement dedicated
+                to empowering Indian entrepreneurs and promoting authentic trade
+                built on trust and quality.
               </p>
             </div>
 
-            {/* Right Lottie Animation */}
+            {/* Right — Lottie */}
             <div className="flex justify-center items-center">
               {animationData ? (
                 <Lottie
@@ -147,39 +176,39 @@ const AboutUs = () => {
             </div>
           </div>
 
-          {/* Highlighted Info Card */}
-          <div className="bg-white border-l-4 border-blue-600 rounded-2xl px-10 py-10 shadow-sm hover:shadow-md transition-shadow">
-            <p className="text-gray-800 text-xl leading-relaxed">
-              We connect international businesses with authentic Indian
-              manufacturers and suppliers. From traditional handicrafts to
-              modern innovations, we curate products that represent India's
-              diversity and quality — helping thousands of businesses expand
-              globally with confidence.
-            </p>
-          </div>
+          {/* Highlighted Info */}
+          <div className="bg-[#0f172a] border-l-4 border-[#14b8a6] rounded-2xl px-10 py-10 shadow-md hover:shadow-lg transition-shadow">
+  <p className="text-xl leading-relaxed text-gray-200">
+    We connect global businesses with genuine Indian manufacturers and
+    suppliers. From handcrafted goods to contemporary innovations, our
+    curated selection symbolizes India’s diversity, integrity, and
+    quality — building stronger global ties through trade.
+  </p>
+</div>
+
         </div>
       </section>
 
-      {/* Founder Section */}
-      <section className="py-16 px-6 bg-[#0f172a] w-full">
+      {/* Section 2 — Founder */}
+      <section className="py-16 px-6 bg-[#0f172a] w-full text-[#fdfdfe]">
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-white mb-2">
+            <h2 className="text-3xl md:text-4xl font-bold mb-2">
               A Note from Our Founder
             </h2>
-            <p className="text-slate-300 text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
-              Leadership insights that drive our mission to connect cultures
-              through authentic Indian commerce.
+            <p className="text-[#e2e8f0] text-base md:text-lg max-w-3xl mx-auto leading-relaxed">
+              Leadership rooted in passion and purpose — inspiring us to bring
+              India’s authentic craftsmanship to the world stage.
             </p>
           </div>
 
           <div className="relative flex flex-col md:flex-row items-stretch justify-center gap-8">
             {/* Quote Card */}
-            <div className="flex-1 bg-slate-800/50 backdrop-blur-sm border border-slate-600 rounded-2xl p-8 md:p-12 flex flex-col justify-between shadow-2xl relative">
+            <div className="flex-1 bg-[#1e293b]/50 backdrop-blur-sm border border-[#334155] rounded-2xl p-8 md:p-12 flex flex-col justify-between shadow-xl relative">
               <div>
                 <div className="absolute top-6 right-6 opacity-10">
                   <svg
-                    className="w-20 h-20 text-cyan-400"
+                    className="w-20 h-20 text-[#fdfdfe]"
                     fill="currentColor"
                     viewBox="0 0 24 24"
                   >
@@ -187,23 +216,21 @@ const AboutUs = () => {
                   </svg>
                 </div>
 
-                <blockquote className="text-lg md:text-xl text-slate-200 leading-relaxed font-light italic mb-6">
-                  "When I started IndianGoods, my dream was to connect India’s
-                  rich craftsmanship with the world. Every artisan we empower
-                  and every partnership we build helps share the story of India
-                  with global communities."
+                <blockquote className="text-lg md:text-xl leading-relaxed font-light italic mb-6">
+                  "IndianGoods was born from a simple belief — that every
+                  artisan deserves a global stage. Each connection we make
+                  builds a bridge between tradition and innovation, between
+                  India and the world."
                 </blockquote>
               </div>
 
-              <div className="flex items-center gap-4 pt-6 border-t border-slate-600">
-                <div className="w-14 h-14 bg-gradient-to-br from-cyan-400 to-blue-500 rounded-full flex items-center justify-center text-slate-900 font-bold text-lg shadow-lg">
+              <div className="flex items-center gap-4 pt-6 border-t border-[#334155]">
+                <div className="w-14 h-14 bg-[#fdfdfe] text-[#0f172a] rounded-full flex items-center justify-center font-bold text-lg shadow-lg">
                   AS
                 </div>
                 <div>
-                  <h4 className="text-lg font-semibold text-white">
-                    Ayan Srivastav
-                  </h4>
-                  <p className="text-cyan-400 font-medium text-sm">
+                  <h4 className="text-lg font-semibold">Ayan Srivastav</h4>
+                  <p className="text-[#cbd5e1] font-medium text-sm">
                     Founder & CEO, IndianGoods
                   </p>
                 </div>
@@ -211,9 +238,9 @@ const AboutUs = () => {
             </div>
 
             {/* Founder Image */}
-            <div className="w-full md:w-72 h-80 flex-shrink-0 rounded-2xl overflow-hidden border-2 border-slate-600 shadow-2xl ring-1 ring-cyan-400/20">
+            <div className="w-full md:w-72 h-80 flex-shrink-0 rounded-2xl overflow-hidden border-2 border-[#334155] shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1729157661483-ed21901ed892?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0"
+                src="https://images.unsplash.com/photo-1729157661483-ed21901ed892?q=80&w=687&auto=format&fit=crop"
                 alt="Ayan Srivastav"
                 className="w-full h-full object-cover"
               />
@@ -222,35 +249,37 @@ const AboutUs = () => {
         </div>
       </section>
 
-      {/* Core Values Section */}
-      <section className="py-24 px-6 bg-white">
+      {/* Section 3 — Core Values */}
+      {/* <section className="py-24 px-6 bg-[#fdfdfe] text-[#0f172a]">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <span className="text-blue-700 font-semibold text-sm tracking-wider uppercase">
+            <span className="font-semibold text-sm tracking-wider uppercase text-[#0f172a]/80">
               What Drives Us
             </span>
-            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mt-3 mb-5">
+            <h2 className="text-4xl md:text-5xl font-bold mt-3 mb-5">
               Our Core Values
             </h2>
-            <div className="w-20 h-1 bg-blue-700 mx-auto rounded-full"></div>
+            <div className="w-20 h-1 bg-[#0f172a] mx-auto rounded-full"></div>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-10">
             {values.map((value, idx) => (
               <div
                 key={idx}
-                className="bg-white border border-gray-200 rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
+                className="bg-[#fdfdfe] border border-[#e2e8f0] rounded-2xl p-8 shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="mb-6 flex items-center">{value.icon}</div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-gray-600 leading-relaxed">{value.desc}</p>
+                <h3 className="text-xl font-semibold mb-3">{value.title}</h3>
+                <p className="leading-relaxed opacity-90">{value.desc}</p>
               </div>
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
+
+      <CyberneticBentoGrid />
+
+      {/* <FeatureSectionDemo /> */}
 
       {/* Meet the Team */}
       <TeamSection />

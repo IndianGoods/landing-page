@@ -7,12 +7,13 @@ import {
   Shield,
   Clock,
   Star,
-  ArrowRight,
 } from "lucide-react";
 import Navbar from "../components/Navbar";
-import { motion } from "framer-motion";
 import Footer from "../components/Footer";
 import HeroSection from "../components/Headers";
+import { motion } from "framer-motion";
+import FeatureSectionDemo from "../components/ui/features-section-demo-2";
+
 // Animated Counter Component
 const AnimatedCounter = ({ end, duration = 2000, suffix = "" }) => {
   const [count, setCount] = useState(0);
@@ -39,15 +40,13 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }) => {
       { threshold: 0.1 }
     );
 
-    if (countRef.current) {
-      observer.observe(countRef.current);
-    }
+    if (countRef.current) observer.observe(countRef.current);
 
     return () => observer.disconnect();
   }, [end, duration, isVisible]);
 
   return (
-    <span ref={countRef} className="font-bold">
+    <span ref={countRef} className="font-bold text-[#0f172a]">
       {count.toLocaleString()}
       {suffix}
     </span>
@@ -55,243 +54,202 @@ const AnimatedCounter = ({ end, duration = 2000, suffix = "" }) => {
 };
 
 const Marketplace = () => {
-  // Handle hash navigation on page load
+  // Smooth scroll for hash links
   useEffect(() => {
     const hash = window.location.hash;
     if (hash) {
-      // Small delay to ensure the page has rendered
       setTimeout(() => {
         const element = document.querySelector(hash);
-        if (element) {
-          element.scrollIntoView({
-            behavior: "smooth",
-            block: "start",
-          });
-        }
+        if (element)
+          element.scrollIntoView({ behavior: "smooth", block: "start" });
       }, 100);
     }
   }, []);
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="min-h-screen bg-[#fdfdfe]">
       <Navbar isHomePage={true} />
-      
+
       <HeroSection
         heading="India's Trusted B2B Marketplace"
         subheading="Connecting 10,000+ Manufacturers and 50,000+ Wholesalers directly to build stronger, faster, and more reliable supply chains."
       />
 
-      {/* Process Section - Section 1: Light Gray */}
+      {/* Process Section */}
       <section
         id="process"
         className="bg-[#fdfdfe] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
       >
         <div className="max-w-6xl mx-auto relative z-10">
-          {/* Header */}
           <div className="text-center mb-12 sm:mb-16 lg:mb-20">
-            <span className="text-blue-600 font-semibold text-xs sm:text-sm tracking-wider uppercase">
+            <span className="text-[#0f172a]/80 font-semibold text-xs sm:text-sm tracking-wider uppercase">
               Process
             </span>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mt-3 mb-4">
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-[#0f172a] mt-3 mb-4">
               How the Marketplace Works
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 mx-auto rounded-full mb-6"></div>
-            <p className="text-base sm:text-lg lg:text-xl text-gray-600 max-w-3xl mx-auto px-4">
+            <p className="text-base sm:text-lg lg:text-xl text-[#334155] max-w-3xl mx-auto px-4">
               A seamless journey for manufacturers and wholesalers, connected by
               our intelligent platform
             </p>
           </div>
 
-          {/* Flow Container */}
-          <div className="relative">
-            {/* Animated Curvy Line */}
-            {/* Animated Curvy Line */}
-            <svg
-              className="absolute left-0 top-0 h-full w-full hidden md:block pointer-events-none"
-              viewBox="0 0 1200 1800"
-              preserveAspectRatio="none"
+          {/* Animated Curvy Line */}
+          {/* <svg
+            className="absolute left-0 top-20 h-full w-full hidden md:block pointer-events-none"
+            viewBox="0 0 1200 1800"
+            preserveAspectRatio="none"
+          >
+            <path
+              d="M 900 380 
+                 C 900 450, 700 500, 600 550
+                 C 500 600, 300 620, 300 650
+                 M 300 950
+                 C 300 1000, 500 1050, 600 1100
+                 C 700 1150, 900 1200, 900 1270"
+              fill="none"
+              stroke="#0f172a"
+              strokeWidth="3"
+              strokeDasharray="12,8"
+              strokeLinecap="round"
+              opacity="0.6"
             >
-              <defs>
-                <linearGradient id="flowLine" x1="0%" y1="0%" x2="0%" y2="100%">
-                  <stop offset="0%" stopColor="#2563eb" />
-                  <stop offset="50%" stopColor="#0743ba" />
-                  <stop offset="100%" stopColor="#06b6d4" />
-                </linearGradient>
-              </defs>
-              <path
-                d="M 900 380 
-                   C 900 450, 700 500, 600 550
-                   C 500 600, 300 620, 300 650
-                   
-                   M 300 950
-                   C 300 1000, 500 1050, 600 1100
-                   C 700 1150, 900 1200, 900 1270"
-                fill="none"
-                stroke="url(#flowLine)"
-                strokeWidth="3"
-                strokeDasharray="12,8"
-                strokeLinecap="round"
-                opacity="0.6"
-              >
-                <animate
-                  attributeName="stroke-dashoffset"
-                  values="0;-20"
-                  dur="2s"
-                  repeatCount="indefinite"
-                />
-              </path>
-            </svg>
+              <animate
+                attributeName="stroke-dashoffset"
+                values="0;-20"
+                dur="2s"
+                repeatCount="indefinite"
+              />
+            </path>
+          </svg> */}
 
-            {/* Steps */}
-            <div className="space-y-16 sm:space-y-24 lg:space-y-32 relative z-10">
-              {/* Step 1 */}
+          {/* Steps */}
+          <div className="space-y-16 sm:space-y-24 lg:space-y-32 relative z-10">
+            {[
+              {
+                step: 1,
+                title: "Manufacturers List Products",
+                desc: "Showcase your products instantly and access a verified buyer network with real-time analytics.",
+                img: "process1.png",
+                features: [
+                  "List Products Instantly",
+                  "Verified Buyer Network",
+                  "Real-time Analytics",
+                ],
+                imgFirst: false,
+              },
+              {
+                step: 2,
+                title: "Platform Connects & Matches",
+                desc: "Our AI engine ensures secure matching, smooth payments, and logistics with 24/7 support.",
+                img: "process2.png",
+                features: [
+                  "AI-Powered Matching",
+                  "Secure Transactions",
+                  "24/7 Support",
+                ],
+                imgFirst: true,
+              },
+              {
+                step: 3,
+                title: "Wholesalers Receive Orders",
+                desc: "Access competitive prices, quality assurance, and timely deliveries at scale.",
+                img: "process3.png",
+                features: [
+                  "Quality Assurance",
+                  "Flexible Payments",
+                  "Timely Delivery",
+                ],
+                imgFirst: false,
+              },
+            ].map((step, idx) => (
               <motion.div
-                initial={{ opacity: 0, x: -60 }}
+                key={idx}
+                initial={{ opacity: 0, x: step.imgFirst ? 60 : -60 }}
                 whileInView={{ opacity: 1, x: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
                 className="flex flex-col md:flex-row items-center gap-8 lg:gap-12"
               >
-                <div className="w-full md:w-1/2 order-2 md:order-1">
-                  <span className="inline-block mb-3 px-3 sm:px-4 py-1.5 bg-blue-600/10 rounded-full text-blue-600 font-bold text-xs sm:text-sm">
-                    STEP 1
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                    Manufacturers List Products
-                  </h3>
-                  <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
-                    Showcase your products instantly and access a verified buyer
-                    network with real-time analytics.
-                  </p>
+                {step.imgFirst ? (
+                  <>
+                    {/* Image on Left */}
+                    <div className="w-full md:w-1/2 order-1">
+                      <img
+                        src={step.img}
+                        alt={step.title}
+                        className="rounded-2xl w-full h-60 sm:h-72 lg:h-80 object-cover"
+                      />
+                    </div>
 
-                  <div className="space-y-3">
-                    {[
-                      "List Products Instantly",
-                      "Verified Buyer Network",
-                      "Real-time Analytics",
-                    ].map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle className="w-6 h-6 text-blue-600" />
-                        <span className="text-base text-gray-700">
-                          {feature}
-                        </span>
+                    {/* Content on Right */}
+                    <div className="w-full md:w-1/2 order-2">
+                      <span className="inline-block mb-3 px-3 sm:px-4 py-1.5 bg-[#0f172a] rounded-full text-white font-bold text-xs sm:text-sm">
+                        STEP {step.step}
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0f172a] mb-4">
+                        {step.title}
+                      </h3>
+                      <p className="text-base sm:text-lg text-[#334155] mb-6 leading-relaxed">
+                        {step.desc}
+                      </p>
+                      <div className="space-y-3">
+                        {step.features.map((feature, fidx) => (
+                          <div key={fidx} className="flex items-start gap-3">
+                            <CheckCircle className="w-6 h-6 text-[#0f172a]" />
+                            <span className="text-[#334155] text-base">
+                              {feature}
+                            </span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="w-full md:w-1/2 order-1 md:order-2">
-                  <div className="relative group">
-                    <img
-                      src="process1.png"
-                      alt="Manufacturers listing products"
-                      className="rounded-2xl w-full h-60 sm:h-72 lg:h-80 object-cover"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-
-              {/* Step 2 */}
-              <motion.div
-                initial={{ opacity: 0, x: 60 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex flex-col md:flex-row items-center gap-8 lg:gap-12"
-              >
-                <div className="w-full md:w-1/2">
-                  <div className="relative group">
-                    <img
-                      src="process2.png"
-                      alt="Platform matching AI"
-                      className="rounded-2xl w-full h-60 sm:h-72 lg:h-80 object-cover"
-                    />
-                  </div>
-                </div>
-
-                <div className="w-full md:w-1/2">
-                  <span className="inline-block mb-3 px-3 sm:px-4 py-1.5 bg-blue-600/10 rounded-full text-blue-600 font-bold text-xs sm:text-sm">
-                    STEP 2
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                    Platform Connects & Matches
-                  </h3>
-                  <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
-                    Our AI engine ensures secure matching, smooth payments, and
-                    logistics with 24/7 support.
-                  </p>
-
-                  <div className="space-y-3">
-                    {[
-                      "AI-Powered Matching",
-                      "Secure Transactions",
-                      "24/7 Support",
-                    ].map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle className="w-6 h-6 text-blue-600" />
-                        <span className="text-base text-gray-700">
-                          {feature}
-                        </span>
+                    </div>
+                  </>
+                ) : (
+                  <>
+                    {/* Content on Left */}
+                    <div className="w-full md:w-1/2 order-2 md:order-1">
+                      <span className="inline-block mb-3 px-3 sm:px-4 py-1.5 bg-[#0f172a] rounded-full text-white font-bold text-xs sm:text-sm">
+                        STEP {step.step}
+                      </span>
+                      <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-[#0f172a] mb-4">
+                        {step.title}
+                      </h3>
+                      <p className="text-base sm:text-lg text-[#334155] mb-6 leading-relaxed">
+                        {step.desc}
+                      </p>
+                      <div className="space-y-3">
+                        {step.features.map((feature, fidx) => (
+                          <div key={fidx} className="flex items-start gap-3">
+                            <CheckCircle className="w-6 h-6 text-[#0f172a]" />
+                            <span className="text-[#334155] text-base">
+                              {feature}
+                            </span>
+                          </div>
+                        ))}
                       </div>
-                    ))}
-                  </div>
-                </div>
+                    </div>
+
+                    {/* Image on Right */}
+                    <div className="w-full md:w-1/2 order-1 md:order-2">
+                      <img
+                        src={step.img}
+                        alt={step.title}
+                        className="rounded-2xl w-full h-60 sm:h-72 lg:h-80 object-cover"
+                      />
+                    </div>
+                  </>
+                )}
               </motion.div>
-
-              {/* Step 3 */}
-              <motion.div
-                initial={{ opacity: 0, x: -60 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.6 }}
-                viewport={{ once: true }}
-                className="flex flex-col md:flex-row items-center gap-8 lg:gap-12"
-              >
-                <div className="w-full md:w-1/2 order-2 md:order-1">
-                  <span className="inline-block mb-3 px-3 sm:px-4 py-1.5 bg-blue-600/10 rounded-full text-blue-600 font-bold text-xs sm:text-sm">
-                    STEP 3
-                  </span>
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
-                    Wholesalers Receive Orders
-                  </h3>
-                  <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed">
-                    Access competitive prices, quality assurance, and timely
-                    deliveries at scale.
-                  </p>
-
-                  <div className="space-y-3">
-                    {[
-                      "Quality Assurance",
-                      "Flexible Payments",
-                      "Timely Delivery",
-                    ].map((feature, idx) => (
-                      <div key={idx} className="flex items-start gap-3">
-                        <CheckCircle className="w-6 h-6 text-blue-600" />
-                        <span className="text-base text-gray-700">
-                          {feature}
-                        </span>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-
-                <div className="w-full md:w-1/2 order-1 md:order-2">
-                  <div className="relative group">
-                    <img
-                      src="process3.png"
-                      alt="Wholesalers receiving orders"
-                      className="rounded-2xl w-full h-60 sm:h-72 lg:h-80 object-cover"
-                    />
-                  </div>
-                </div>
-              </motion.div>
-            </div>
+            ))}
           </div>
 
-          {/* Bottom CTA */}
-            <div className="text-center mt-16 sm:mt-20 lg:mt-24">
-            <div className="inline-flex items-center gap-2 bg-white px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full">
+          {/* CTA */}
+          <div className="text-center mt-16 sm:mt-20 lg:mt-24">
+            <div className="inline-flex items-center gap-2 bg-[#fdfdfe] px-4 sm:px-6 lg:px-8 py-3 sm:py-4 rounded-full">
               <div className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></div>
-              <p className="text-gray-900 font-semibold text-sm sm:text-base">
+              <p className="text-[#0f172a] font-semibold text-sm sm:text-base">
                 Join <span className="text-blue-600 font-bold">1,000+</span>{" "}
                 businesses already trading on our platform
               </p>
@@ -300,22 +258,21 @@ const Marketplace = () => {
         </div>
       </section>
 
-    
-
-      {/* Benefits Section - Section 2: Dark Blue */}
-      <section id="benefits" className="bg-[#0f172a] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
-        <div className="max-w-6xl mx-auto">
+      {/* Benefits Section */}
+      {/* <section
+        id="benefits"
+        className="bg-[#0f172a] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+      >
+        <div className="max-w-6xl mx-auto text-white">
           <div className="text-center mb-12 sm:mb-16">
-            <div className="inline-block mb-4">
-              <span className="text-cyan-400 font-semibold text-xs sm:text-sm tracking-wider uppercase">
-                Benefits
-              </span>
-            </div>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-4">
+            <span className="text-cyan-400 font-semibold text-xs sm:text-sm tracking-wider uppercase">
+              Benefits
+            </span>
+            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
               Why Choose Our Platform?
             </h2>
             <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 mx-auto rounded-full mb-6"></div>
-            <p className="text-base sm:text-lg lg:text-xl text-slate-300 max-w-3xl mx-auto px-4">
+            <p className="text-slate-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto px-4">
               Experience the future of B2B trading with cutting-edge technology
               and unmatched reliability
             </p>
@@ -356,9 +313,9 @@ const Marketplace = () => {
             ].map((item, idx) => (
               <div
                 key={idx}
-                className="bg-slate-800/50 backdrop-blur-sm border border-slate-600 rounded-xl p-8 hover:shadow-2xl transition-all hover:bg-slate-800/70"
+                className="bg-[#1e293b]/70 backdrop-blur-sm border border-[#334155] rounded-xl p-8 hover:shadow-2xl transition-all hover:bg-[#1e293b]/80"
               >
-                <div className="inline-flex p-4 rounded-xl bg-gradient-to-br from-cyan-400 to-blue-500 text-slate-900 mb-6 shadow-lg">
+                <div className="inline-flex p-0 rounded-none mb-6 text-white">
                   {item.icon}
                 </div>
 
@@ -370,9 +327,30 @@ const Marketplace = () => {
             ))}
           </div>
         </div>
+      </section> */}
+
+      <section
+        id="benefits"
+        className="bg-[#0f172a] py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8"
+      >
+        <div className="text-center mb-12 sm:mb-16">
+          <span className="text-cyan-400 font-semibold text-xs sm:text-sm tracking-wider uppercase">
+            Benefits
+          </span>
+          <h2 className="text-white text-3xl sm:text-4xl lg:text-5xl font-bold mb-4">
+            Why Choose Our Platform?
+          </h2>
+          <div className="w-20 h-1 bg-gradient-to-r from-blue-600 to-cyan-400 mx-auto rounded-full mb-6"></div>
+          <p className="text-slate-300 text-base sm:text-lg lg:text-xl max-w-3xl mx-auto px-4">
+            Experience the future of B2B trading with cutting-edge technology
+            and unmatched reliability
+          </p>
+        </div>
+
+        <FeatureSectionDemo />
       </section>
+
       <Footer />
-      {/* Footer */}
     </div>
   );
 };
