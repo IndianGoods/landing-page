@@ -99,7 +99,7 @@ const AboutUs = () => {
         subheading="Connecting cultures through authentic Indian craftsmanship and innovation."
       /> */}
 
-      <div className="h-[20rem] w-full bg-[#0f172a] flex flex-col items-center justify-center overflow-hidden">
+      <div className="h-[23.25rem] w-full bg-[#0f172a] flex flex-col items-center justify-center overflow-hidden">
         <h1 className="md:text-6xl text-3xl lg:text-8xl font-bold text-center text-white relative z-20">
           About Us
         </h1>
@@ -178,14 +178,13 @@ const AboutUs = () => {
 
           {/* Highlighted Info */}
           <div className="bg-[#0f172a] border-l-4 border-[#14b8a6] rounded-2xl px-10 py-10 shadow-md hover:shadow-lg transition-shadow">
-  <p className="text-xl leading-relaxed text-gray-200">
-    We connect global businesses with genuine Indian manufacturers and
-    suppliers. From handcrafted goods to contemporary innovations, our
-    curated selection symbolizes India’s diversity, integrity, and
-    quality — building stronger global ties through trade.
-  </p>
-</div>
-
+            <p className="text-xl leading-relaxed text-gray-200">
+              We connect global businesses with genuine Indian manufacturers and
+              suppliers. From handcrafted goods to contemporary innovations, our
+              curated selection symbolizes India’s diversity, integrity, and
+              quality — building stronger global ties through trade.
+            </p>
+          </div>
         </div>
       </section>
 
