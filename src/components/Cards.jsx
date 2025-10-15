@@ -1,7 +1,9 @@
+import { LampDemo } from "./LampDemo";
+
 function Cards() {
   return (
-    <section className="bg-[#0f172a] w-full flex items-center justify-center py-12 px-8 text-white relative">
-      <div className="max-w-7xl pt-16">
+    <section className="bg-[#0f172a] w-full flex flex-col items-center justify-center py-12 px-8 text-white relative">
+      <div className="max-w-7xl py-16">
         <div className="flex flex-col items-center justify-center gap-4 ">
           <h1 className="text-3xl md:text-5xl uppercase font-oswald font-bold text-center leading-snug">
             Protect your investments with{" "}
