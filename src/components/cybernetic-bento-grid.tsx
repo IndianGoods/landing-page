@@ -38,13 +38,13 @@ export const CyberneticBentoGrid: React.FC = () => {
     <div className="main-container">
       <div className="w-full max-w-6xl z-10">
         <h1 className="text-4xl sm:text-5xl font-bold text-gray-900 text-center mb-8">
-          Core Features
+          Core Values
         </h1>
         <div className="bento-grid">
           <BentoItem className="col-span-2 row-span-2 flex flex-col justify-between">
             <div>
               <h2 className="text-2xl font-bold text-gray-100">Real-time Analytics</h2>
-              <p className="mt-2 text-gray-300">
+              <p className="mt-2 text-gray-100">
                 Monitor your application's performance with up-to-the-second data streams and visualizations.
               </p>
             </div>
@@ -54,31 +54,31 @@ export const CyberneticBentoGrid: React.FC = () => {
           </BentoItem>
           <BentoItem>
             <h2 className="text-xl font-bold text-gray-100">Global CDN</h2>
-            <p className="mt-2 text-gray-300 text-sm">
+            <p className="mt-2 text-gray-100 text-sm">
               Deliver content at lightning speed, no matter where your users are.
             </p>
           </BentoItem>
           <BentoItem>
             <h2 className="text-xl font-bold text-gray-100">Secure Auth</h2>
-            <p className="mt-2 text-gray-300 text-sm">
+            <p className="mt-2 text-gray-100 text-sm">
               Enterprise-grade authentication and user management built-in.
             </p>
           </BentoItem>
           <BentoItem className="row-span-2">
             <h2 className="text-xl font-bold text-gray-100">Automated Backups</h2>
-            <p className="mt-2 text-gray-300 text-sm">
+            <p className="mt-2 text-gray-100 text-sm">
               Your data is always safe with automated, redundant backups.
             </p>
           </BentoItem>
           <BentoItem className="col-span-2">
             <h2 className="text-xl font-bold text-gray-100">Serverless Functions</h2>
-            <p className="mt-2 text-gray-300 text-sm">
+            <p className="mt-2 text-gray-100 text-sm">
               Run your backend code without managing servers. Scale infinitely with ease.
             </p>
           </BentoItem>
           <BentoItem>
             <h2 className="text-xl font-bold text-gray-100">CLI Tool</h2>
-            <p className="mt-2 text-gray-300 text-sm">
+            <p className="mt-2 text-gray-100 text-sm">
               Manage your entire infrastructure from the command line.
             </p>
           </BentoItem>

@@ -12,7 +12,7 @@ const demoData = {
     {
       id: "logo-2",
       description: "Shiprocket", 
-      image: "https://shiprocket.in/wp-content/uploads/2019/07/shiprocket-logo.png",
+      image: "https://pnghdpro.com/wp-content/themes/pnghdpro/download/social-media-and-brands/shiprocket-logo-hd.png",
       className: "h-8 w-auto opacity-60 hover:opacity-100 transition-opacity",
     },
     {
@@ -24,7 +24,7 @@ const demoData = {
     {
       id: "logo-4",
       description: "PhonePe",
-      image: "https://www.phonepe.com/webstatic/6.8.0/images/logo.svg",
+      image: "https://upload.wikimedia.org/wikipedia/commons/thumb/7/71/PhonePe_Logo.svg/1200px-PhonePe_Logo.svg.png",
       className: "h-8 w-auto opacity-60 hover:opacity-100 transition-opacity",
     },
     {
@@ -54,13 +54,13 @@ const demoData = {
     {
       id: "logo-9",
       description: "Myntra",
-      image: "https://logos-world.net/wp-content/uploads/2020/11/Myntra-Logo.png",
+      image: "https://logos-world.net/wp-content/uploads/2022/12/Myntra-Logo-500x281.png",
       className: "h-8 w-auto opacity-60 hover:opacity-100 transition-opacity",
     },
     {
       id: "logo-10",
       description: "BigBasket",
-      image: "https://www.bigbasket.com/media/uploads/p/l/bb-logo-website.png",
+      image: "https://toppng.com/uploads/preview/10-increase-in-push-notification-delivery-rate-big-basket-logo-11563033846bwsaivw7ne.png",
       className: "h-8 w-auto opacity-60 hover:opacity-100 transition-opacity",
     },
   ],

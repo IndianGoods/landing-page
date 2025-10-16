@@ -4,20 +4,20 @@ import { FaFacebook, FaLinkedin, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const Footer = () => {
   return (
-    <footer className="bg-[#f0f0f5] text-[#0f172a] w-full">
+    <footer className="bg-[#f0f0f5] text-black w-full">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12 pt-12 sm:pt-16">
         {/* Grid of links */}
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           {/* Column 1 - Company */}
           <div className="text-center sm:text-left">
-            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0f172a]">
+            <h3 className="font-semibold text-base sm:text-lg mb-4 text-black">
               Company
             </h3>
             <ul className="space-y-2 sm:space-y-3 text-sm">
               <li>
                 <Link
                   to="/about"
-                  className="hover:text-[#1e293b] transition-colors"
+                  className="hover:text-[#f97415] transition-colors"
                 >
                   About Us
                 </Link>
@@ -25,7 +25,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/blog"
-                  className="hover:text-[#1e293b] transition-colors"
+                  className="hover:text-[#f97415] transition-colors"
                 >
                   Blog & Research
                 </Link>
@@ -33,7 +33,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/contact"
-                  className="hover:text-[#1e293b] transition-colors"
+                  className="hover:text-[#f97415] transition-colors"
                 >
                   Contact Us
                 </Link>
@@ -41,7 +41,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/marketplace"
-                  className="hover:text-[#1e293b] transition-colors"
+                  className="hover:text-[#f97415] transition-colors"
                 >
                   Market Place
                 </Link>
@@ -51,14 +51,14 @@ const Footer = () => {
 
           {/* Column 2 - Marketplace */}
           <div className="text-center sm:text-left">
-            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0f172a]">
+            <h3 className="font-semibold text-base sm:text-lg mb-4 text-black">
               Marketplace
             </h3>
             <ul className="space-y-2 sm:space-y-3 text-sm">
               <li>
                 <Link
                   to="/marketplace"
-                  className="hover:text-[#1e293b] transition-colors"
+                  className="hover:text-[#f97415] transition-colors"
                 >
                   B2B Marketplace
                 </Link>
@@ -66,7 +66,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/marketplace#benefits"
-                  className="hover:text-[#1e293b] transition-colors"
+                  className="hover:text-[#f97415] transition-colors"
                 >
                   Benefits
                 </Link>
@@ -74,7 +74,7 @@ const Footer = () => {
               <li>
                 <Link
                   to="/marketplace#process"
-                  className="hover:text-[#1e293b] transition-colors"
+                  className="hover:text-[#f97415] transition-colors"
                 >
                   Our Process
                 </Link>
@@ -84,10 +84,10 @@ const Footer = () => {
 
           {/* Column 3 - Stay Connected */}
           <div className="text-center sm:text-left">
-            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0f172a]">
+            <h3 className="font-semibold text-base sm:text-lg mb-4 text-black">
               Stay Connected
             </h3>
-            <p className="text-sm mb-4 text-gray-700">
+            <p className="text-sm mb-4 text-black">
               Join our community for updates and business insights
             </p>
 
@@ -98,7 +98,7 @@ const Footer = () => {
                   <a
                     key={idx}
                     href="#"
-                    className="w-8 h-8 sm:w-10 sm:h-10 bg-[#fdfdfe] shadow-md rounded-full flex items-center justify-center text-[#0f172a] hover:bg-[#0f172a] hover:text-[#fdfdfe] transition-all duration-300 hover:scale-105"
+                    className="w-8 h-8 sm:w-10 sm:h-10 bg-[#fdfdfe] shadow-md rounded-full flex items-center justify-center text-black hover:bg-[#f97415] hover:text-[#fdfdfe] transition-all duration-300 hover:scale-105"
                   >
                     <Icon size={16} className="sm:w-[18px] sm:h-[18px]" />
                   </a>
@@ -111,7 +111,7 @@ const Footer = () => {
               href="https://chat.whatsapp.com/your-community-link"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 bg-gradient-to-r from-[#0f172a] to-[#1e293b] text-[#fdfdfe] font-medium px-3 sm:px-4 py-2 rounded-lg shadow hover:shadow-md transition-all duration-300 hover:scale-[1.02] text-sm"
+              className="inline-flex items-center gap-2 bg-[#25d366] text-[#fdfdfe] font-medium px-3 sm:px-4 py-2 rounded-lg shadow hover:shadow-md transition-all duration-300 hover:scale-[1.02] text-sm"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -129,36 +129,32 @@ const Footer = () => {
 
           {/* Column 4 - Contact Information */}
           <div className="text-center sm:text-left">
-            <h3 className="font-semibold text-base sm:text-lg mb-4 text-[#0f172a]">
+            <h3 className="font-semibold text-base sm:text-lg mb-4 text-black">
               Contact Information
             </h3>
             <div className="space-y-3 sm:space-y-4">
-              <div className="flex items-start gap-3 justify-center sm:justify-start">
-                <span className="text-[#0f172a] text-base sm:text-lg">📧</span>
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <span className="text-black text-base sm:text-lg">📧</span>
                 <div className="text-center sm:text-left">
-                  <h4 className="font-medium text-[#0f172a] text-sm">Email</h4>
-                  <p className="text-xs text-gray-700">
-                    support@indiangoods.com
-                  </p>
-                  <p className="text-xs text-gray-600">
-                    business@indiangoods.com
-                  </p>
+                  <h4 className="font-medium text-black text-sm">Email</h4>
+                  <p className="text-xs text-black">support@indiangoods.com</p>
+                  <p className="text-xs text-black">business@indiangoods.com</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 justify-center sm:justify-start">
-                <span className="text-[#0f172a] text-base sm:text-lg">📞</span>
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <span className="text-black text-base sm:text-lg">📞</span>
                 <div className="text-center sm:text-left">
-                  <h4 className="font-medium text-[#0f172a] text-sm">Phone</h4>
-                  <p className="text-xs text-gray-700">+91 1800-XXX-XXXX</p>
-                  <p className="text-xs text-gray-600">24/7 Support Available</p>
+                  <h4 className="font-medium text-black text-sm">Phone</h4>
+                  <p className="text-xs text-black">+91 1800-XXX-XXXX</p>
+                  <p className="text-xs text-black">24/7 Support Available</p>
                 </div>
               </div>
-              <div className="flex items-start gap-3 justify-center sm:justify-start">
-                <span className="text-[#0f172a] text-base sm:text-lg">📍</span>
+              <div className="flex items-center gap-2 justify-center sm:justify-start">
+                <span className="text-black text-base sm:text-lg">📍</span>
                 <div className="text-center sm:text-left">
-                  <h4 className="font-medium text-[#0f172a] text-sm">Address</h4>
-                  <p className="text-xs text-gray-700">Mumbai, Maharashtra</p>
-                  <p className="text-xs text-gray-600">India</p>
+                  <h4 className="font-medium text-black text-sm">Address</h4>
+                  <p className="text-xs text-black">Mumbai, Maharashtra</p>
+                  <p className="text-xs text-black">India</p>
                 </div>
               </div>
             </div>
@@ -168,19 +164,17 @@ const Footer = () => {
         {/* Copyright and Legal */}
         <div className="mt-8 sm:mt-12 pt-6 sm:pt-8 border-t border-gray-300">
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
-            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-4 lg:gap-6 text-xs text-gray-600">
-              <p>
-                © {new Date().getFullYear()} IndianGoods. All rights reserved.
-              </p>
+            <div className="flex flex-col sm:flex-row flex-wrap items-center justify-center md:justify-start gap-2 sm:gap-4 lg:gap-6 text-xs text-black">
+              <p>© {new Date().getFullYear()} IndianGoods. All rights reserved.</p>
               <span className="hidden sm:block">|</span>
-              <a href="#" className="hover:text-[#1e293b] transition-colors">
+              <a href="#" className="hover:text-[#f97415] transition-colors">
                 Terms of Service
               </a>
-              <a href="#" className="hover:text-[#1e293b] transition-colors">
+              <a href="#" className="hover:text-[#f97415] transition-colors">
                 Privacy Policy
               </a>
             </div>
-            <div className="text-xs text-gray-600">
+            <div className="text-xs text-black">
               <p>🇮🇳 Proudly Made in India</p>
             </div>
           </div>
@@ -189,12 +183,10 @@ const Footer = () => {
         {/* Branding Section */}
         <div className="py-6 sm:py-8">
           <h1 className="text-center w-full text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-extrabold tracking-tight">
-            {/* <span className="text-[#0f172a]">Indian</span>
-            <span className="text-[#1e293b]">Goods</span> */}
-            <span className="text-gray-800">Indian</span>
-          <span className="text-[#ff3030]">Goods</span>
+            <span className="text-black">Indian</span>
+            <span className="text-[#ff3030]">Goods</span>
           </h1>
-          <p className="text-center text-gray-700 mt-2 text-xs sm:text-sm">
+          <p className="text-center text-black mt-2 text-xs sm:text-sm">
             Connecting India's Manufacturers & Wholesalers
           </p>
         </div>

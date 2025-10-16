@@ -34,11 +34,11 @@ export default function TeamSection() {
   ];
 
   return (
-    <section className="py-24 px-6 bg-[#0f172a]">
+    <section className="py-24 px-6 bg-[#f97415]">
       <div className="max-w-7xl mx-auto">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <p className="text-sm font-semibold text-cyan-400 uppercase tracking-widest mb-3">
+          <p className="text-sm font-semibold text-white/80 uppercase tracking-widest mb-3">
             Leadership Team
           </p>
           <h2 className="text-4xl md:text-5xl font-bold text-white">
@@ -51,46 +51,44 @@ export default function TeamSection() {
           {teamMembers.map((member, idx) => (
             <div
               key={idx}
-              className="group bg-slate-800/50 backdrop-blur-sm border border-slate-600 rounded-lg overflow-hidden transition-all duration-300 hover:shadow-2xl hover:bg-slate-800/70"
+              className="group bg-white rounded-xl overflow-hidden border border-orange-100 shadow-md transition-all duration-300 hover:shadow-xl hover:-translate-y-2"
             >
               {/* Image */}
-              <div className="relative w-full h-80 overflow-hidden bg-slate-700">
+              <div className="relative w-full h-80 overflow-hidden">
                 <img
                   src={member.img}
                   alt={member.name}
-                  className="w-full h-full object-cover transition-all duration-500"
+                  className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                 />
-                
-                {/* Social Links Overlay */}
-                <div className="absolute inset-0 bg-slate-900/90 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
+
+                {/* Lighter Hover Overlay */}
+                <div className="absolute inset-0 bg-gradient-to-b from-[#fff3e0]/90 via-[#ffe0b2]/80 to-[#ffd699]/70 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center gap-4">
                   <a
                     href={member.linkedin}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center justify-center w-11 h-11 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors"
+                    className="flex items-center justify-center w-11 h-11 bg-[#f97415] rounded-full hover:bg-[#ff8c33] transition-colors"
                     aria-label="LinkedIn"
                   >
-                    <Linkedin className="w-5 h-5 text-slate-900" />
+                    <Linkedin className="w-5 h-5 text-white" />
                   </a>
-                  
+
                   <a
                     href={member.email}
-                    className="flex items-center justify-center w-11 h-11 bg-cyan-400 rounded-full hover:bg-cyan-300 transition-colors"
+                    className="flex items-center justify-center w-11 h-11 bg-[#f97415] rounded-full hover:bg-[#ff8c33] transition-colors"
                     aria-label="Email"
                   >
-                    <Mail className="w-5 h-5 text-slate-900" />
+                    <Mail className="w-5 h-5 text-white" />
                   </a>
                 </div>
               </div>
 
               {/* Info */}
               <div className="p-6 text-center">
-                <h3 className="text-lg font-semibold text-white mb-1">
+                <h3 className="text-lg font-semibold text-[#f97415] mb-1">
                   {member.name}
                 </h3>
-                <p className="text-sm text-slate-300">
-                  {member.role}
-                </p>
+                <p className="text-sm text-gray-700">{member.role}</p>
               </div>
             </div>
           ))}
